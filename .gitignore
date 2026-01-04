@@ -1,24 +1,53 @@
-# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
-
-node_modules
-dist
-dist-ssr
-*.local
-
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
+# ============= 全局通用忽略（系统/编辑器/缓存文件） =============
+# 系统隐藏文件
 .DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+Thumbs.db
+# 编辑器配置（根据自己的编辑器选择，比如不用vim可以删*.swp）
+.idea/
+.vscode/
+.backend/.vscode/
+.frontend/.vscode/
+*.swp
+*.swo
+# 临时文件
+*.tmp
+*.temp
+
+
+# ============= 前端（frontend/Vue）忽略规则 =============
+# 前端依赖
+/frontend/node_modules/
+# 前端打包产物
+/frontend/dist/
+/frontend/build/
+# 环境变量文件（敏感信息，如接口地址、密钥）
+/frontend/.env
+/frontend/.env.*
+!/frontend/.env.example # 保留示例文件（可选）
+# 包管理日志
+/frontend/npm-debug.log*
+/frontend/yarn-debug.log*
+/frontend/yarn-error.log*
+# 测试/覆盖率文件
+/frontend/coverage/
+
+
+# ============= 后端（backend）忽略规则（根据后端语言选对应部分） =============
+# ---------- 若后端是 Node.js ----------
+/backend/node_modules/
+/backend/logs/
+/backend/.env
+/backend/.env.*
+!/backend/.env.example
+/backend/npm-debug.log*
+/backend/yarn-debug.log*
+/backend/yarn-error.log*
+
+---------- 若后端是 Python（比如 Django/Flask） ----------
+/backend/venv/
+/backend/__pycache__/
+/backend/*.pyc
+/backend/*.pyo
+/backend/*.pyd
+/backend/.env
+/backend/logs/
