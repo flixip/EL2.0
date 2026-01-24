@@ -1,6 +1,10 @@
 import e_Start from '../components/Nodes/e_Start.vue'
 import e_Add from '../components/Nodes/e_Add.vue'
 import e_Output from '../components/Nodes/e_Output.vue'
+import e_Sub from '../components/Nodes/e_Sub.vue'
+import e_Predict from '../components/Nodes/e_Predict.vue'
+import e_ViewImg from '../components/Nodes/e_ViewImg.vue'
+
 import { markRaw,type Ref ,watch,type Reactive,reactive, ref,toRaw } from 'vue'
 import type{ VueFlowStore ,Connection} from '@vue-flow/core'
 
@@ -174,6 +178,7 @@ export class NodeManager {
       console.log('✅初始化完毕\n当前节点id:',this.cur_id.value,'\n当前节点数据:',this.cur_data)
       console.log('当前idfunc映射表：',toRaw(this.id_func_map))
     }
+
     /**
      * 执行一步
      * 1.获取当前节点id
@@ -219,7 +224,9 @@ export const nodeTypes = {
     Add: markRaw(e_Add),
     Start: markRaw(e_Start),
     Output: markRaw(e_Output),
-
+    Subtract: markRaw(e_Sub),
+    Predict: markRaw(e_Predict),
+    ViewImg: markRaw(e_ViewImg),
 }
 
 
