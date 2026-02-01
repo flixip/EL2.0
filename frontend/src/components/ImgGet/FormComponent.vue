@@ -40,8 +40,11 @@
       <div class="step-content">
         <!-- 步骤1：基本筛选 -->
         <div v-if="currentStep === 1" class="step-panel">
-          <Step1 @next-step="()=>{
-            goToStep(2);}" />
+          <Step1 
+            @next-step="()=>{
+              goToStep(2);
+            }"
+          />
         </div>
 
         <!-- 步骤2：卫星选择 -->
@@ -74,7 +77,6 @@ const currentStep = ref(1);
 const goToStep = (step) => {
   currentStep.value = step;
 };
-
 
 </script>
 

@@ -13,8 +13,8 @@
           <el-icon><Management /></el-icon>
       </template>
       <el-icon class="cursor-pointer float-right" @click="isCollapse = !isCollapse" v-if="isCollapse"><Expand /></el-icon>
-      <el-icon class="cursor-pointer float-right" @click="isCollapse = !isCollapse" v-else><Fold /></el-icon>
-          <FormComponent v-show="!isCollapse" />
+          <el-icon class="cursor-pointer float-right" @click="isCollapse = !isCollapse" v-else><Fold /></el-icon>
+              <FormComponent v-show="!isCollapse" />
       </el-tab-pane>
       
       <el-tab-pane  name="results">

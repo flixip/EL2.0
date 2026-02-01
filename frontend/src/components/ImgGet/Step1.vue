@@ -7,48 +7,32 @@
       label="研究区"
       label-position="left"
       required>
-        <el-select
-          v-model="formData.province"
-          placeholder="请选择研究区"
-          style="width: 100%"
-          required
-        >
-          <el-option value="roi">自定义研究区</el-option>
-          <el-option value="北京市">北京市</el-option>
-          <el-option value="天津市">天津市</el-option>
-          <el-option value="河北省">河北省</el-option>
-          <el-option value="河南省">河南省</el-option>
-          <el-option value="安徽省">安徽省</el-option>
-          <el-option value="江苏省">江苏省</el-option>
-          <el-option value="浙江省">浙江省</el-option>
-          <el-option value="上海市">上海市</el-option>
-          <el-option value="江西省">江西省</el-option>
-          <el-option value="湖北省">湖北省</el-option>
-          <el-option value="湖南省">湖南省</el-option>
-          <el-option value="福建省">福建省</el-option>
-          <el-option value="广东省">广东省</el-option>
-          <el-option value="广西壮族自治区">广西壮族自治区</el-option>
-          <el-option value="贵州省">贵州省</el-option>
-          <el-option value="云南省">云南省</el-option>
-          <el-option value="四川省">四川省</el-option>
-          <el-option value="重庆市">重庆市</el-option>
-          <el-option value="陕西省">陕西省</el-option>
-          <el-option value="甘肃省">甘肃省</el-option>
-          <el-option value="新疆维吾尔自治区">新疆维吾尔自治区</el-option>
-          <el-option value="青海省">青海省</el-option>
-          <el-option value="西藏自治区">西藏自治区</el-option>
-          <el-option value="内蒙古自治区">内蒙古自治区</el-option>
-          <el-option value="宁夏回族自治区">宁夏回族自治区</el-option>
-          <el-option value="山西省">山西省</el-option>
-          <el-option value="山东省">山东省</el-option>
-          <el-option value="辽宁省">辽宁省</el-option>
-          <el-option value="吉林省">吉林省</el-option>
-          <el-option value="黑龙江省">黑龙江省</el-option>
-          <el-option value="海南省">海南省</el-option>
-          <el-option value="香港特别行政区">香港特别行政区</el-option>
-          <el-option value="澳门特别行政区">澳门特别行政区</el-option>
-          <el-option value="台湾省">台湾省</el-option>
-        </el-select>
+        <div class="flex gap-4">
+          <el-radio-group v-model="areaType" @change="handleAreaTypeChange" style="margin-right: 20px">
+            <el-radio value="region">行政区划</el-radio>
+            <el-radio value="custom">自定义研究区</el-radio>
+          </el-radio-group>
+        </div>
+        
+        <div v-if="areaType === 'region'" style="margin-top: 12px;width: 100%">
+          <el-cascader
+            v-model="regionData"
+            :options="regionOptions"
+            :props="cascaderProps"
+            placeholder="请选择省/市"
+            style="width: 100%"
+            :loading="loading"
+          />
+        </div>
+        <div v-else-if="areaType === 'custom'" style="margin-top: 12px;width: 100%">
+          <el-input
+            v-model="formData.province"
+            placeholder="自定义研究区"
+            style="width: 100%"
+            readonly
+            value="roi"
+          />
+        </div>
       </el-form-item>
        
         <el-form-item
@@ -89,18 +73,38 @@
 </template>
 
 <script setup>
-import { ref, reactive } from 'vue';
+import { ref, reactive, onMounted, computed, watch } from 'vue';
 import { Download , ArrowRight } from '@element-plus/icons-vue';
+import geoDataService from '@/services/GeoDataService';
+import MapManager from '@/tools/mapManager';
 
 const emit = defineEmits(['next-step']);
 const formRef = ref(null);
 
+// 表单数据
 const formData = reactive({
   dateRange: null,
   cloud: 20,
   province: ''
 });
 
+// 区域选择类型
+const areaType = ref('region');
+
+// 级联选择器数据
+const regionData = ref([]);
+const regionOptions = ref([]);
+const loading = ref(false);
+
+// 级联选择器配置
+const cascaderProps = {
+  value: 'value',
+  label: 'label',
+  children: 'children',
+  checkStrictly: true
+};
+
+// 验证规则
 const rules = {
   dateRange: [
     {
@@ -118,13 +122,102 @@ const rules = {
   ]
 };
 
-const handleNext = () => {
+// 处理区域类型切换
+const handleAreaTypeChange = () => {
+  if (areaType.value === 'custom') {
+    formData.province = 'roi';
+    regionData.value = [];
+  } else {
+    formData.province = '';
+  }
+};
+
+// 加载地理数据
+const loadGeoData = async () => {
+  try {
+    loading.value = true;
+    
+    // 初始化地理数据服务
+    await geoDataService.initialize();
+    
+    // 获取省份数据
+    const provinces = geoDataService.getProvinces();
+    
+    // 构建级联选择器选项
+    const options = provinces.map(province => {
+      // 获取该省份的城市
+      const cities = geoDataService.getCitiesByProvince(province.name);
+      
+      return {
+        value: province.name,
+        label: province.name,
+        children: cities.map(city => ({
+          value: city.name,
+          label: city.name
+        }))
+      };
+    });
+    
+    regionOptions.value = options;
+  } catch (error) {
+    console.error('Failed to load geo data:', error);
+  } finally {
+    loading.value = false;
+  }
+};
+
+// 监听区域数据变化
+const updateProvinceData = () => {
+  if (regionData.value && regionData.value.length > 0) {
+    // 如果选择了城市，使用城市名称；否则使用省份名称
+    formData.province = regionData.value[regionData.value.length - 1];
+  } else {
+    formData.province = '';
+  }
+};
+
+// 监听区域数据变化
+watch(regionData, () => {
+  updateProvinceData();
+}, { deep: true });
+
+// 处理下一步
+const handleNext = async () => {
   if (formRef.value) {
     formRef.value.validate((valid) => {
       if (valid) {
         // 保存表单数据到全局状态或本地存储
         localStorage.setItem('imgGetStep1', JSON.stringify(formData));
         console.log(localStorage.getItem('imgGetStep1'));
+        
+        // 准备区域选择数据
+        let regionSelectionData = null;
+        if (areaType.value === 'region' && regionData.value.length > 0) {
+          regionSelectionData = {
+            type: 'region',
+            data: regionData.value,
+            province: formData.province
+          };
+        } else if (areaType.value === 'custom') {
+          regionSelectionData = {
+            type: 'custom',
+            data: null,
+            province: formData.province
+          };
+        }
+        
+        // 直接使用MapManager单例处理区域选择
+        try {
+          const mapManager = MapManager.getInstance();
+          if (mapManager && regionSelectionData) {
+            // 直接调用MapManager的handleRegionSelected方法
+            mapManager.handleRegionSelected(regionSelectionData);
+            console.log('直接通过MapManager处理区域选择');
+          }
+        } catch (error) {
+          console.error('Error accessing map manager:', error);
+        }
+        
         emit('next-step');
       } else {
         console.log('表单验证失败');
@@ -132,4 +225,9 @@ const handleNext = () => {
     });
   }
 };
+
+// 生命周期钩子
+onMounted(async () => {
+  await loadGeoData();
+});
 </script>

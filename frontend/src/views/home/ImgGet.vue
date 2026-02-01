@@ -5,7 +5,7 @@
     <!-- 地图区域 -->
     <div
     class="flex-1 max-h-full p-2">
-      <MapComponent />
+      <MapComponent ref="mapComponentRef" />
     </div>
     
     <!-- 右侧面板 -->
@@ -17,7 +17,10 @@
 </template>
 
 <script setup>
+import { ref } from 'vue';
 import MapComponent from '@/components/ImgGet/MapComponent.vue';
 import RightPanel from '@/components/ImgGet/RightPanel.vue';
+
+const mapComponentRef = ref(null);
 </script>
 

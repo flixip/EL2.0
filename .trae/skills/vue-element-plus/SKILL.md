@@ -1,6 +1,6 @@
 ---
-name: "vue-element-plus"
-description: "Provides guidance and documentation links for Element Plus components. Invoke when needing standard UI components like forms, checkboxes, or tables. Prioritize Element Plus over custom components."
+name: vue-element-plus
+description: Provides guidance and documentation links for Element Plus components. Invoke when needing standard UI components like forms, checkboxes, or tables. Prioritize Element Plus over custom components.
 ---
 
 # Vue Element Plus Component Guide

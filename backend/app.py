@@ -2,16 +2,18 @@ from flask import Flask,request,jsonify,send_from_directory
 from flask_cors import CORS
 import ultralytics
 import os
-
-
-app = Flask(__name__)
-CORS(app)
-
-model = ultralytics.YOLO('backend/utils/model/best.pt')
+import json
 
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 TEMP_DIR = os.path.join(BASE_DIR, 'temp')
+
+app = Flask(__name__)
+CORS(app)
+
+model = ultralytics.YOLO(f'{BASE_DIR}/utils/model/best.pt')
+
+
 
 @app.route('/data')
 def index():
@@ -22,6 +24,20 @@ def index():
 @app.route('/temp/<path:filename>')
 def serve_temp_dir(filename):
     return send_from_directory(TEMP_DIR, filename)
+
+
+# 提供中国省界以及省界下二级区划的geojson文件
+@app.route('/geodata/<path:filename>')
+def get_geojson(filename):
+    return send_from_directory(f'{BASE_DIR}/src/ChinaGeodata', filename)
+
+# 提供中国地理数据映射表
+@app.route('/geodataMap')
+def get_geodata_map():
+    with open(f'{BASE_DIR}/src/geodataUrlMap.json', 'r', encoding='utf-8') as f:
+        data = json.load(f)
+    return jsonify(data)
+
 
 @app.route('/upload', methods=['POST'])
 def upload():
@@ -49,5 +65,8 @@ def upload():
         'status':'success',
         }
         )
+    
+    
+
 if __name__ == '__main__':
     app.run(debug=True)

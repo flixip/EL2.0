@@ -1,29 +1,51 @@
 <template>
-  <div class="function-page">
-    <div class="function-content">
-      <h1 class="text-4xl font-bold text-slate-700">该功能敬请期待</h1>
-      <p class="text-xl text-slate-500 mt-4">数据分析中心功能正在开发中</p>
-    </div>
+  <div class="data-analyse-container">
+    <!-- 左侧整合侧边栏 -->
+    <DataSidebar ref="sidebarRef" />
+    
+    <!-- 右侧地图容器 -->
+    <el-main class="map-container relative">
+      <MapContainer ref="mapContainerRef" />
+      <TimeAxis :visible="sidebarRef?.isTimeAxisEnabled" />
+    </el-main>
   </div>
 </template>
 
 <script setup>
+import { ref } from 'vue';
+import MapContainer from '@/components/DataAnalyse/MapContainer.vue';
+import DataSidebar from '@/components/DataAnalyse/DataSidebar.vue';
+import TimeAxis from '@/components/DataAnalyse/TimeAxis.vue';
 
+// 组件引用
+const mapContainerRef = ref(null);
+const sidebarRef = ref(null);
 </script>
 
 <style scoped>
-.function-page {
-  min-height: 100%;
+.data-analyse-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
 }
 
-.function-content {
-  text-align: center;
-  padding: 48px;
-  background-color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+.map-container {
+  flex: 1;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+</style>
+
+<style>
+/* 全局样式调整 */
+.el-aside {
+  height: 100vh;
+}
+
+.el-main {
+  height: 100vh;
+  padding: 0;
 }
 </style>

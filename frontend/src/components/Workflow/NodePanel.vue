@@ -93,7 +93,7 @@
               </div>
             </template>
             <div class="p-1 flex flex-col gap-2">
-              <el-button type="info" size="small" class="w-full !ml-0 justify-start" @click="addPredictNode">
+              <el-button type="info" size="small" class="w-full ml-0! justify-start" @click="addPredictNode">
                 <span class="mr-2">🤖</span>预测节点
               </el-button>
             </div>
@@ -108,7 +108,7 @@
               </div>
             </template>
             <div class="p-1 flex flex-col gap-2">
-              <el-button type="warning" size="small" class="w-full !ml-0 justify-start" @click="addViewImgNode">
+              <el-button type="warning" size="small" class="w-full ml-0! justify-start" @click="addViewImgNode">
                 <span class="mr-2">🖼️</span>图片展示
               </el-button>
             </div>
@@ -123,13 +123,13 @@
               </div>
             </template>
             <div class="p-1 flex flex-col gap-2">
-              <el-button type="danger" size="small" class="w-full !ml-0 justify-start" @click="nodeManager.step()">
+              <el-button type="danger" size="small" class="w-full ml-0! justify-start" @click="nodeManager.step()">
                 <span class="mr-2">⏭️</span>单步调试
               </el-button>
-              <el-button type="danger" size="small" class="w-full !ml-0 justify-start" @click="nodeManager.run()">
+              <el-button type="danger" size="small" class="w-full ml-0! justify-start" @click="nodeManager.run()">
                 <span class="mr-2">▶️</span>运行到结束
               </el-button>
-              <el-button type="danger" size="small" class="w-full !ml-0 justify-start" @click="nodeManager.reset()">
+              <el-button type="danger" size="small" class="w-full ml-0! justify-start" @click="nodeManager.reset()">
                 <span class="mr-2">🔄</span>重置运行
               </el-button>
             </div>
