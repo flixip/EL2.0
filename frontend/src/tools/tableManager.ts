@@ -39,6 +39,10 @@ export default class TableManager {
     }, { deep: true });
   }
 
+  /**
+   * 获取单例实例
+   * @returns {TableManager} TableManager 实例
+   */
   public static getInstance(): TableManager {
     if (!TableManager.instance) {
       TableManager.instance = new TableManager();
@@ -48,6 +52,8 @@ export default class TableManager {
 
   /**
    * 解析 CSV 文本
+   * @param {string} text - CSV 原始文本
+   * @returns {{ headers: string[]; rows: string[][] }} 解析后的表头和行数据
    */
   public parseCSV(text: string): { headers: string[]; rows: string[][] } {
     const lines = text.split('\n').filter(l => l.trim());
@@ -61,6 +67,9 @@ export default class TableManager {
 
   /**
    * 添加 CSV 数据
+   * @param {string} name - 数据名称
+   * @param {string} rawText - CSV 原始文本
+   * @returns {string} 新添加数据的 ID
    */
   public addCSV(name: string, rawText: string): string {
     const { headers, rows } = this.parseCSV(rawText);
@@ -80,6 +89,8 @@ export default class TableManager {
 
   /**
    * 更新 CSV 数据（用于编辑保存）
+   * @param {string} id - 数据 ID
+   * @param {string} newText - 新的 CSV 文本
    */
   public updateCSV(id: string, newText: string): void {
     const index = this.importedCSVList.value.findIndex(item => item.id === id);
@@ -98,6 +109,7 @@ export default class TableManager {
 
   /**
    * 删除 CSV 数据
+   * @param {string} id - 数据 ID
    */
   public removeCSV(id: string): void {
     this.importedCSVList.value = this.importedCSVList.value.filter(item => item.id !== id);
@@ -105,6 +117,9 @@ export default class TableManager {
 
   /**
    * 应用映射关系
+   * @param {string} id - 数据 ID
+   * @param {string} nameField - 名称字段名
+   * @param {string[]} valueFields - 数值字段名列表
    */
   public applyMapping(id: string, nameField: string, valueFields: string[]): void {
     const item = this.importedCSVList.value.find(i => i.id === id);
@@ -116,6 +131,7 @@ export default class TableManager {
 
   /**
    * 聚合所有已映射的数据
+   * 遍历所有已导入的 CSV，提取映射后的数据并合并到 dataState
    */
   private aggregateData(): void {
     const newData = new Map<string, number[]>();
@@ -146,6 +162,7 @@ export default class TableManager {
 
   /**
    * 获取模板数据的原始文本
+   * @returns {string} CSV 格式的模板数据
    */
   public getTemplateCSVText(): string {
     const header = "District,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010";
@@ -155,6 +172,7 @@ export default class TableManager {
 
   /**
    * 加载示例模板
+   * @returns {string} 新添加的示例数据 ID
    */
   public loadTemplateData(): string {
     const rawText = this.getTemplateCSVText();

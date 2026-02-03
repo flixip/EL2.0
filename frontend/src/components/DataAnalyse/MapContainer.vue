@@ -2,11 +2,11 @@
   <div ref="mapContainer" class="w-full h-full relative overflow-hidden"></div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue';
 import MapManager from '@/tools/mapManager';
 
-const mapContainer = ref(null);
+const mapContainer = ref<HTMLElement | null>(null);
 const mapManager = MapManager.getInstance();
 
 onMounted(() => {
