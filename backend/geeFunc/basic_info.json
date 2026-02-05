@@ -1,0 +1,1489 @@
+[
+  {
+    "数据集可用时间": "2014-10-03T00:00:00Z–2025-11-04T08:22:49Z",
+    "频率": "6 天",
+    "name": "Sentinel-1 SAR GRD: C-band Synthetic Aperture Radar Ground Range Detected, log scaling",
+    "空间分辨率": "未知或者有多个，请查具体属性表",
+    "id": "COPERNICUS/S1_GRD",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\COPERNICUS_S1_GRD.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\COPERNICUS_S1_GRD.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/COPERNICUS_S1_GRD?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2017-03-28T00:00:00Z–2025-11-04T08:18:33.172000Z",
+    "频率": "5 天",
+    "name": "Harmonized Sentinel-2 MSI: MultiSpectral Instrument, Level-2A (SR)",
+    "空间分辨率": "未知或者有多个，请查具体属性表",
+    "id": "COPERNICUS/S2_SR_HARMONIZED",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\COPERNICUS_S2_SR_HARMONIZED.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\COPERNICUS_S2_SR_HARMONIZED.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/COPERNICUS_S2_SR_HARMONIZED?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2015-06-27T00:00:00Z–2025-11-04T09:41:20.228000Z",
+    "频率": "5 天",
+    "name": "Harmonized Sentinel-2 MSI: MultiSpectral Instrument, Level-1C (TOA)",
+    "空间分辨率": "未知或者有多个，请查具体属性表",
+    "id": "COPERNICUS/S2_HARMONIZED",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\COPERNICUS_S2_HARMONIZED.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\COPERNICUS_S2_HARMONIZED.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/COPERNICUS_S2_HARMONIZED?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2016-10-18T19:25:42Z–2025-11-03T07:26:35Z",
+    "频率": "2 天",
+    "name": "Sentinel-3 OLCI EFR: Ocean and Land Color Instrument Earth Observation Full Resolution",
+    "空间分辨率": "300 米",
+    "id": "COPERNICUS/S3/OLCI",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\COPERNICUS_S3_OLCI.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\COPERNICUS_S3_OLCI.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/COPERNICUS_S3_OLCI?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2018-07-04T13:34:21Z–2025-11-01T18:59:48Z",
+    "频率": "2 天",
+    "name": "Sentinel-5P OFFL AER AI: Offline UV Aerosol Index",
+    "空间分辨率": "1113.2 米",
+    "id": "COPERNICUS/S5P/OFFL/L3_AER_AI",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\COPERNICUS_S5P_OFFL_L3_AER_AI.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\COPERNICUS_S5P_OFFL_L3_AER_AI.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/COPERNICUS_S5P_OFFL_L3_AER_AI?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2018-07-10T11:17:44Z–2025-11-04T08:46:54Z",
+    "频率": "2 天",
+    "name": "Sentinel-5P NRTI AER AI: Near Real-Time UV Aerosol Index",
+    "空间分辨率": "1113.2 米",
+    "id": "COPERNICUS/S5P/NRTI/L3_AER_AI",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\COPERNICUS_S5P_NRTI_L3_AER_AI.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\COPERNICUS_S5P_NRTI_L3_AER_AI.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/COPERNICUS_S5P_NRTI_L3_AER_AI?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2018-07-04T11:34:21Z–2025-10-28T16:53:10Z",
+    "频率": "2 天",
+    "name": "Sentinel-5P OFFL CLOUD: Offline Cloud Properties",
+    "空间分辨率": "1113.2 米",
+    "id": "COPERNICUS/S5P/OFFL/L3_CLOUD",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\COPERNICUS_S5P_OFFL_L3_CLOUD.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\COPERNICUS_S5P_OFFL_L3_CLOUD.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/COPERNICUS_S5P_OFFL_L3_CLOUD?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2018-07-05T23:24:16Z–2025-11-03T08:51:54Z",
+    "频率": "2 天",
+    "name": "Sentinel-5P NRTI CLOUD: Near Real-Time Cloud Properties",
+    "空间分辨率": "1113.2 米",
+    "id": "COPERNICUS/S5P/NRTI/L3_CLOUD",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\COPERNICUS_S5P_NRTI_L3_CLOUD.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\COPERNICUS_S5P_NRTI_L3_CLOUD.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/COPERNICUS_S5P_NRTI_L3_CLOUD?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2018-06-28T10:24:07Z–2025-11-01T17:18:19Z",
+    "频率": "2 天",
+    "name": "Sentinel-5P OFFL CO: Offline Carbon Monoxide",
+    "空间分辨率": "1113.2 米",
+    "id": "COPERNICUS/S5P/OFFL/L3_CO",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\COPERNICUS_S5P_OFFL_L3_CO.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\COPERNICUS_S5P_OFFL_L3_CO.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/COPERNICUS_S5P_OFFL_L3_CO?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2018-11-22T12:00:13Z–2025-11-04T08:46:54Z",
+    "频率": "2 天",
+    "name": "Sentinel-5P NRTI CO: Near Real-Time Carbon Monoxide",
+    "空间分辨率": "1113.2 米",
+    "id": "COPERNICUS/S5P/NRTI/L3_CO",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\COPERNICUS_S5P_NRTI_L3_CO.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\COPERNICUS_S5P_NRTI_L3_CO.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/COPERNICUS_S5P_NRTI_L3_CO?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2018-12-05T12:14:36Z–2025-11-01T17:18:19Z",
+    "频率": "2 天",
+    "name": "Sentinel-5P OFFL HCHO: Offline Formaldehyde",
+    "空间分辨率": "1113.2 米",
+    "id": "COPERNICUS/S5P/OFFL/L3_HCHO",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\COPERNICUS_S5P_OFFL_L3_HCHO.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\COPERNICUS_S5P_OFFL_L3_HCHO.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/COPERNICUS_S5P_OFFL_L3_HCHO?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2018-10-02T07:58:03Z–2025-11-03T08:51:54Z",
+    "频率": "2 天",
+    "name": "Sentinel-5P NRTI HCHO: Near Real-Time Formaldehyde",
+    "空间分辨率": "1113.2 米",
+    "id": "COPERNICUS/S5P/NRTI/L3_HCHO",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\COPERNICUS_S5P_NRTI_L3_HCHO.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\COPERNICUS_S5P_NRTI_L3_HCHO.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/COPERNICUS_S5P_NRTI_L3_HCHO?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2018-06-28T10:24:07Z–2025-10-21T22:29:50Z",
+    "频率": "2 天",
+    "name": "Sentinel-5P OFFL NO2: Offline Nitrogen Dioxide",
+    "空间分辨率": "1113.2 米",
+    "id": "COPERNICUS/S5P/OFFL/L3_NO2",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\COPERNICUS_S5P_OFFL_L3_NO2.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\COPERNICUS_S5P_OFFL_L3_NO2.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/COPERNICUS_S5P_OFFL_L3_NO2?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2018-07-10T10:05:44Z–2025-11-04T08:36:55Z",
+    "频率": "2 天",
+    "name": "Sentinel-5P NRTI NO2: Near Real-Time Nitrogen Dioxide",
+    "空间分辨率": "1113.2 米",
+    "id": "COPERNICUS/S5P/NRTI/L3_NO2",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\COPERNICUS_S5P_NRTI_L3_NO2.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\COPERNICUS_S5P_NRTI_L3_NO2.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/COPERNICUS_S5P_NRTI_L3_NO2?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2018-09-08T21:19:29Z–2025-10-28T11:48:41Z",
+    "频率": "2 天",
+    "name": "Sentinel-5P OFFL O3: Offline Ozone",
+    "空间分辨率": "1113.2 米",
+    "id": "COPERNICUS/S5P/OFFL/L3_O3",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\COPERNICUS_S5P_OFFL_L3_O3.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\COPERNICUS_S5P_OFFL_L3_O3.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/COPERNICUS_S5P_OFFL_L3_O3?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2018-07-10T11:02:44Z–2025-11-03T08:51:54Z",
+    "频率": "2 天",
+    "name": "Sentinel-5P NRTI O3: Near Real-Time Ozone",
+    "空间分辨率": "1113.2 米",
+    "id": "COPERNICUS/S5P/NRTI/L3_O3",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\COPERNICUS_S5P_NRTI_L3_O3.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\COPERNICUS_S5P_NRTI_L3_O3.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/COPERNICUS_S5P_NRTI_L3_O3?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2018-12-05T11:53:01Z–2025-11-01T10:32:21Z",
+    "频率": "2 天",
+    "name": "Sentinel-5P OFFL SO2: Offline Sulfur Dioxide",
+    "空间分辨率": "1113.2 米",
+    "id": "COPERNICUS/S5P/OFFL/L3_SO2",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\COPERNICUS_S5P_OFFL_L3_SO2.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\COPERNICUS_S5P_OFFL_L3_SO2.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/COPERNICUS_S5P_OFFL_L3_SO2?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2018-07-10T11:17:44Z–2025-11-03T08:51:54Z",
+    "频率": "2 天",
+    "name": "Sentinel-5P NRTI SO2: Near Real-Time Sulfur Dioxide",
+    "空间分辨率": "1113.2 米",
+    "id": "COPERNICUS/S5P/NRTI/L3_SO2",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\COPERNICUS_S5P_NRTI_L3_SO2.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\COPERNICUS_S5P_NRTI_L3_SO2.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/COPERNICUS_S5P_NRTI_L3_SO2?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2019-02-08T08:13:16Z–2025-11-01T15:36:50Z",
+    "频率": "2 天",
+    "name": "Sentinel-5P OFFL CH4: Offline Methane",
+    "空间分辨率": "1113.2 米",
+    "id": "COPERNICUS/S5P/OFFL/L3_CH4",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\COPERNICUS_S5P_OFFL_L3_CH4.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\COPERNICUS_S5P_OFFL_L3_CH4.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/COPERNICUS_S5P_OFFL_L3_CH4?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2015-06-27T00:00:00Z–2025-11-04T08:12:10.018000Z",
+    "name": "Dynamic World V1",
+    "空间分辨率": "10 米",
+    "id": "GOOGLE/DYNAMICWORLD/V1",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\GOOGLE_DYNAMICWORLD_V1.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\GOOGLE_DYNAMICWORLD_V1.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/GOOGLE_DYNAMICWORLD_V1?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2020-01-01T00:00:00Z–2021-01-01T00:00:00Z",
+  
+    "name": "ESA WorldCover 10m v100",
+    "空间分辨率": "未知或者有多个，请查具体属性表",
+    "id": "ESA/WorldCover/v100",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\ESA_WorldCover_v100.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\ESA_WorldCover_v100.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/ESA_WorldCover_v100?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2015-06-27T00:00:00Z–2025-11-04T06:28:10.205000Z",
+    "name": "Cloud Score+ S2_HARMONIZED V1",
+    "空间分辨率": "10 米",
+    "id": "GOOGLE/CLOUD_SCORE_PLUS/V1/S2_HARMONIZED",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\GOOGLE_CLOUD_SCORE_PLUS_V1_S2_HARMONIZED.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\GOOGLE_CLOUD_SCORE_PLUS_V1_S2_HARMONIZED.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/GOOGLE_CLOUD_SCORE_PLUS_V1_S2_HARMONIZED?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2015-06-27T00:00:00Z–2025-11-04T08:51:51Z",
+    "频率": "5 天",
+    "name": "Sentinel-2: Cloud Probability",
+    "空间分辨率": "未知或者有多个，请查具体属性表",
+    "id": "COPERNICUS/S2_CLOUD_PROBABILITY",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\COPERNICUS_S2_CLOUD_PROBABILITY.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\COPERNICUS_S2_CLOUD_PROBABILITY.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/COPERNICUS_S2_CLOUD_PROBABILITY?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2021-10-31T00:00:00Z–2025-10-17T16:30:41.170000Z",
+    "频率": "16 天",
+    "name": "USGS Landsat 9 Level 2, Collection 2, Tier 1",
+    "空间分辨率": "30 米",
+    "id": "LANDSAT/LC09/C02/T1_L2",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\LANDSAT_LC09_C02_T1_L2.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\LANDSAT_LC09_C02_T1_L2.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/LANDSAT_LC09_C02_T1_L2"
+  },
+  {
+    "数据集可用时间": "2021-10-31T00:00:00Z–2025-10-17T16:28:17.756000Z",
+    "频率": "16 天",
+    "name": "USGS Landsat 9 Level 2, Collection 2, Tier 2",
+    "空间分辨率": "30 米",
+    "id": "LANDSAT/LC09/C02/T2_L2",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\LANDSAT_LC09_C02_T2_L2.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\LANDSAT_LC09_C02_T2_L2.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/LANDSAT_LC09_C02_T2_L2"
+  },
+  {
+    "数据集可用时间": "2021-10-31T00:00:00Z–2025-10-17T16:30:41.170000Z",
+    "频率": "16 天",
+    "name": "USGS Landsat 9 Collection 2 Tier 1 TOA Reflectance",
+    "空间分辨率": "未知或者有多个，请查具体属性表",
+    "id": "LANDSAT/LC09/C02/T1_TOA",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\LANDSAT_LC09_C02_T1_TOA.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\LANDSAT_LC09_C02_T1_TOA.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/LANDSAT_LC09_C02_T1_TOA"
+  },
+  {
+    "数据集可用时间": "2021-11-02T01:06:10Z–2025-10-17T16:28:17.756000Z",
+    "频率": "16 天",
+    "name": "USGS Landsat 9 Collection 2 Tier 2 TOA Reflectance",
+    "空间分辨率": "未知或者有多个，请查具体属性表",
+    "id": "LANDSAT/LC09/C02/T2_TOA",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\LANDSAT_LC09_C02_T2_TOA.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\LANDSAT_LC09_C02_T2_TOA.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/LANDSAT_LC09_C02_T2_TOA"
+  },
+  {
+    "数据集可用时间": "2021-10-31T00:00:00Z–2025-10-17T16:30:41.170000Z",
+    "频率": "16 天",
+    "name": "USGS Landsat 9 Collection 2 Tier 1 Raw Scenes",
+    "空间分辨率": "未知或者有多个，请查具体属性表",
+    "id": "LANDSAT/LC09/C02/T1",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\LANDSAT_LC09_C02_T1.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\LANDSAT_LC09_C02_T1.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/LANDSAT_LC09_C02_T1"
+  },
+  {
+    "数据集可用时间": "2021-11-02T01:06:10Z–2025-10-17T16:28:17.756000Z",
+    "频率": "16 天",
+    "name": "USGS Landsat 9 Collection 2 Tier 2 Raw Scenes",
+    "空间分辨率": "未知或者有多个，请查具体属性表",
+    "id": "LANDSAT/LC09/C02/T2",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\LANDSAT_LC09_C02_T2.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\LANDSAT_LC09_C02_T2.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/LANDSAT_LC09_C02_T2"
+  },
+  {
+    "数据集可用时间": "2013-03-18T15:58:14Z–2025-08-31T13:25:11.759000Z",
+    "频率": "16 天",
+    "name": "USGS Landsat 8 Level 2, Collection 2, Tier 1",
+    "空间分辨率": "30 米",
+    "id": "LANDSAT/LC08/C02/T1_L2",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\LANDSAT_LC08_C02_T1_L2.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\LANDSAT_LC08_C02_T1_L2.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/LANDSAT_LC08_C02_T1_L2?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2013-03-18T15:58:38Z–2025-09-30T13:43:16.135000Z",
+    "频率": "16 天",
+    "name": "USGS Landsat 8 Level 2, Collection 2, Tier 2",
+    "空间分辨率": "30 米",
+    "id": "LANDSAT/LC08/C02/T2_L2",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\LANDSAT_LC08_C02_T2_L2.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\LANDSAT_LC08_C02_T2_L2.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/LANDSAT_LC08_C02_T2_L2?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2013-03-18T15:58:14Z–2025-10-31T15:55:06.556000Z",
+    "频率": "16 天",
+    "name": "USGS Landsat 8 Collection 2 Tier 1 TOA Reflectance",
+    "空间分辨率": "未知或者有多个，请查具体属性表",
+    "id": "LANDSAT/LC08/C02/T1_TOA",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\LANDSAT_LC08_C02_T1_TOA.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\LANDSAT_LC08_C02_T1_TOA.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/LANDSAT_LC08_C02_T1_TOA?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2013-03-18T15:58:14Z–2025-11-03T04:10:50.204000Z",
+    "频率": "16 天",
+    "name": "USGS Landsat 8 Collection 2 Tier 1 and Real-Time data TOA Reflectance",
+    "空间分辨率": "未知或者有多个，请查具体属性表",
+    "id": "LANDSAT/LC08/C02/T1_RT_TOA",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\LANDSAT_LC08_C02_T1_RT_TOA.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\LANDSAT_LC08_C02_T1_RT_TOA.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/LANDSAT_LC08_C02_T1_RT_TOA?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2021-10-28T23:17:26Z–2025-10-31T15:54:42.644000Z",
+    "频率": "16 天",
+    "name": "USGS Landsat 8 Collection 2 Tier 2 TOA Reflectance",
+    "空间分辨率": "未知或者有多个，请查具体属性表",
+    "id": "LANDSAT/LC08/C02/T2_TOA",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\LANDSAT_LC08_C02_T2_TOA.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\LANDSAT_LC08_C02_T2_TOA.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/LANDSAT_LC08_C02_T2_TOA?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2013-03-18T15:58:14Z–2025-10-31T15:55:06.556000Z",
+    "频率": "16 天",
+    "name": "USGS Landsat 8 Collection 2 Tier 1 Raw Scenes",
+    "空间分辨率": "未知或者有多个，请查具体属性表",
+    "id": "LANDSAT/LC08/C02/T1",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\LANDSAT_LC08_C02_T1.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\LANDSAT_LC08_C02_T1.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/LANDSAT_LC08_C02_T1?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2013-03-18T15:58:14Z–2025-11-03T04:10:50.204000Z",
+    "频率": "16 天",
+    "name": "USGS Landsat 8 Collection 2 Tier 1 and Real-Time data Raw Scenes",
+    "空间分辨率": "未知或者有多个，请查具体属性表",
+    "id": "LANDSAT/LC08/C02/T1_RT",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\LANDSAT_LC08_C02_T1_RT.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\LANDSAT_LC08_C02_T1_RT.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/LANDSAT_LC08_C02_T1_RT?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2021-10-28T23:17:26Z–2025-10-31T15:54:42.644000Z",
+    "频率": "16 天",
+    "name": "USGS Landsat 8 Collection 2 Tier 2 Raw Scenes",
+    "空间分辨率": "未知或者有多个，请查具体属性表",
+    "id": "LANDSAT/LC08/C02/T2",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\LANDSAT_LC08_C02_T2.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\LANDSAT_LC08_C02_T2.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/LANDSAT_LC08_C02_T2?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "1999-05-28T01:02:17Z–2024-01-19T01:39:58.042000Z",
+    "频率": "16 天",
+    "name": "USGS Landsat 7 Level 2, Collection 2, Tier 1",
+    "空间分辨率": "30 米",
+    "id": "LANDSAT/LE07/C02/T1_L2",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\LANDSAT_LE07_C02_T1_L2.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\LANDSAT_LE07_C02_T1_L2.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/LANDSAT_LE07_C02_T1_L2?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "1999-05-28T01:06:16Z–2024-01-19T00:08:51.725000Z",
+    "频率": "16 天",
+    "name": "USGS Landsat 7 Level 2, Collection 2, Tier 2",
+    "空间分辨率": "30 米",
+    "id": "LANDSAT/LE07/C02/T2_L2",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\LANDSAT_LE07_C02_T2_L2.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\LANDSAT_LE07_C02_T2_L2.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/LANDSAT_LE07_C02_T2_L2?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "1999-05-28T01:02:17Z–2024-01-19T01:39:58.042000Z",
+    "频率": "16 天",
+    "name": "USGS Landsat 7 Collection 2 Tier 1 TOA Reflectance",
+    "空间分辨率": "未知或者有多个，请查具体属性表",
+    "id": "LANDSAT/LE07/C02/T1_TOA",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\LANDSAT_LE07_C02_T1_TOA.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\LANDSAT_LE07_C02_T1_TOA.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/LANDSAT_LE07_C02_T1_TOA?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2003-12-01T01:15:15Z–2024-01-19T00:08:51.725000Z",
+    "频率": "16 天",
+    "name": "USGS Landsat 7 Collection 2 Tier 2 TOA Reflectance",
+    "空间分辨率": "未知或者有多个，请查具体属性表",
+    "id": "LANDSAT/LE07/C02/T2_TOA",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\LANDSAT_LE07_C02_T2_TOA.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\LANDSAT_LE07_C02_T2_TOA.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/LANDSAT_LE07_C02_T2_TOA?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "1999-05-28T01:02:17Z–2024-01-19T01:39:58.042000Z",
+    "频率": "16 天",
+    "name": "USGS Landsat 7 Collection 2 Tier 1 Raw Scenes",
+    "空间分辨率": "未知或者有多个，请查具体属性表",
+    "id": "LANDSAT/LE07/C02/T1",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\LANDSAT_LE07_C02_T1.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\LANDSAT_LE07_C02_T1.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/LANDSAT_LE07_C02_T1?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "1999-05-28T01:05:28Z–2024-01-19T00:08:51.725000Z",
+    "频率": "16 天",
+    "name": "USGS Landsat 7 Collection 2 Tier 2 Raw Scenes",
+    "空间分辨率": "未知或者有多个，请查具体属性表",
+    "id": "LANDSAT/LE07/C02/T2",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\LANDSAT_LE07_C02_T2.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\LANDSAT_LE07_C02_T2.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/LANDSAT_LE07_C02_T2?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "1984-03-16T16:18:01Z–2012-05-05T17:54:06Z",
+    "频率": "16 天",
+    "name": "USGS Landsat 5 Level 2, Collection 2, Tier 1",
+    "空间分辨率": "30 米",
+    "id": "LANDSAT/LT05/C02/T1_L2",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\LANDSAT_LT05_C02_T1_L2.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\LANDSAT_LT05_C02_T1_L2.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/LANDSAT_LT05_C02_T1_L2?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "1984-03-05T15:38:45Z–2011-11-16T23:32:21Z",
+    "频率": "16 天",
+    "name": "USGS Landsat 5 Level 2, Collection 2, Tier 2",
+    "空间分辨率": "30 米",
+    "id": "LANDSAT/LT05/C02/T2_L2",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\LANDSAT_LT05_C02_T2_L2.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\LANDSAT_LT05_C02_T2_L2.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/LANDSAT_LT05_C02_T2_L2?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "1984-04-19T13:56:39Z–2011-11-08T14:18:44Z",
+    "频率": "16 天",
+    "name": "USGS Landsat 5 TM Collection 2 Tier 1 TOA Reflectance",
+    "空间分辨率": "未知或者有多个，请查具体属性表",
+    "id": "LANDSAT/LT05/C02/T1_TOA",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\LANDSAT_LT05_C02_T1_TOA.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\LANDSAT_LT05_C02_T1_TOA.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/LANDSAT_LT05_C02_T1_TOA?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "1984-03-06T16:20:00Z–2001-02-06T16:13:31Z",
+    "频率": "16 天",
+    "name": "USGS Landsat 5 TM Collection 2 Tier 2 TOA Reflectance",
+    "空间分辨率": "未知或者有多个，请查具体属性表",
+    "id": "LANDSAT/LT05/C02/T2_TOA",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\LANDSAT_LT05_C02_T2_TOA.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\LANDSAT_LT05_C02_T2_TOA.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/LANDSAT_LT05_C02_T2_TOA?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "1984-03-16T16:20:00Z–2012-05-05T17:54:06Z",
+    "频率": "16 天",
+    "name": "USGS Landsat 5 TM Collection 2 Tier 1 Raw Scenes",
+    "空间分辨率": "未知或者有多个，请查具体属性表",
+    "id": "LANDSAT/LT05/C02/T1",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\LANDSAT_LT05_C02_T1.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\LANDSAT_LT05_C02_T1.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/LANDSAT_LT05_C02_T1?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "1984-03-06T16:20:00Z–2001-02-06T16:13:31Z",
+    "频率": "16 天",
+    "name": "USGS Landsat 5 TM Collection 2 Tier 2 Raw Scenes",
+    "空间分辨率": "未知或者有多个，请查具体属性表",
+    "id": "LANDSAT/LT05/C02/T2",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\LANDSAT_LT05_C02_T2.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\LANDSAT_LT05_C02_T2.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/LANDSAT_LT05_C02_T2?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "1982-08-22T14:19:55Z–1993-06-24T14:26:23Z",
+    "频率": "16 天",
+    "name": "USGS Landsat 4 Level 2, Collection 2, Tier 1",
+    "空间分辨率": "30 米",
+    "id": "LANDSAT/LT04/C02/T1_L2",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\LANDSAT_LT04_C02_T1_L2.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\LANDSAT_LT04_C02_T1_L2.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/LANDSAT_LT04_C02_T1_L2?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "1982-08-22T14:18:20Z–1993-11-18T14:54:14Z",
+    "频率": "16 天",
+    "name": "USGS Landsat 4 Level 2, Collection 2, Tier 2",
+    "空间分辨率": "30 米",
+    "id": "LANDSAT/LT04/C02/T2_L2",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\LANDSAT_LT04_C02_T2_L2.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\LANDSAT_LT04_C02_T2_L2.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/LANDSAT_LT04_C02_T2_L2?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "1982-08-22T14:19:55Z–1993-12-14T00:00:00Z",
+    "频率": "16 天",
+    "name": "USGS Landsat 4 TM Collection 2 Tier 1 TOA Reflectance",
+    "空间分辨率": "未知或者有多个，请查具体属性表",
+    "id": "LANDSAT/LT04/C02/T1_TOA",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\LANDSAT_LT04_C02_T1_TOA.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\LANDSAT_LT04_C02_T1_TOA.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/LANDSAT_LT04_C02_T1_TOA?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "1982-08-22T14:18:20Z–1993-11-18T14:54:14Z",
+    "频率": "16 天",
+    "name": "USGS Landsat 4 TM Collection 2 Tier 2 TOA Reflectance",
+    "空间分辨率": "未知或者有多个，请查具体属性表",
+    "id": "LANDSAT/LT04/C02/T2_TOA",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\LANDSAT_LT04_C02_T2_TOA.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\LANDSAT_LT04_C02_T2_TOA.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/LANDSAT_LT04_C02_T2_TOA?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "1982-08-22T14:19:55Z–1993-12-14T00:00:00Z",
+    "频率": "16 天",
+    "name": "USGS Landsat 4 TM Collection 2 Tier 1 Raw Scenes",
+    "空间分辨率": "未知或者有多个，请查具体属性表",
+    "id": "LANDSAT/LT04/C02/T1",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\LANDSAT_LT04_C02_T1.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\LANDSAT_LT04_C02_T1.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/LANDSAT_LT04_C02_T1?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "1982-08-22T14:18:20Z–1993-11-18T14:54:14Z",
+    "频率": "16 天",
+    "name": "USGS Landsat 4 TM Collection 2 Tier 2 Raw Scenes",
+    "空间分辨率": "未知或者有多个，请查具体属性表",
+    "id": "LANDSAT/LT04/C02/T2",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\LANDSAT_LT04_C02_T2.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\LANDSAT_LT04_C02_T2.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/LANDSAT_LT04_C02_T2?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "1972-07-26T14:46:24Z–1978-01-06T16:11:54Z",
+    "频率": "16 天",
+    "name": "USGS Landsat 1 MSS Collection 2 Tier 1 Raw Scenes",
+    "空间分辨率": "未知或者有多个，请查具体属性表",
+    "id": "LANDSAT/LM01/C02/T1",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\LANDSAT_LM01_C02_T1.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\LANDSAT_LM01_C02_T1.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/LANDSAT_LM01_C02_T1?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "1972-07-25T04:00:01Z–1978-01-07T16:19:36Z",
+    "频率": "16 天",
+    "name": "USGS Landsat 1 MSS Collection 2 Tier 2 Raw Scenes",
+    "空间分辨率": "未知或者有多个，请查具体属性表",
+    "id": "LANDSAT/LM01/C02/T2",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\LANDSAT_LM01_C02_T2.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\LANDSAT_LM01_C02_T2.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/LANDSAT_LM01_C02_T2?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "1975-01-31T10:19:55Z–1982-02-03T00:49:25Z",
+    "频率": "16 天",
+    "name": "USGS Landsat 2 MSS Collection 2 Tier 1 Raw Scenes",
+    "空间分辨率": "未知或者有多个，请查具体属性表",
+    "id": "LANDSAT/LM02/C02/T1",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\LANDSAT_LM02_C02_T1.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\LANDSAT_LM02_C02_T1.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/LANDSAT_LM02_C02_T1?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "1975-01-24T02:12:31Z–1982-03-12T10:52:37Z",
+    "频率": "16 天",
+    "name": "USGS Landsat 2 MSS Collection 2 Tier 2 Raw Scenes",
+    "空间分辨率": "未知或者有多个，请查具体属性表",
+    "id": "LANDSAT/LM02/C02/T2",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\LANDSAT_LM02_C02_T2.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\LANDSAT_LM02_C02_T2.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/LANDSAT_LM02_C02_T2?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "1978-06-03T15:56:41Z–1983-02-23T00:21:35Z",
+    "频率": "16 天",
+    "name": "USGS Landsat 3 MSS Collection 2 Tier 1 Raw Scenes",
+    "空间分辨率": "未知或者有多个，请查具体属性表",
+    "id": "LANDSAT/LM03/C02/T1",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\LANDSAT_LM03_C02_T1.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\LANDSAT_LM03_C02_T1.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/LANDSAT_LM03_C02_T1?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "1978-03-07T02:02:05Z–1983-03-31T20:55:16Z",
+    "频率": "16 天",
+    "name": "USGS Landsat 3 MSS Collection 2 Tier 2 Raw Scenes",
+    "空间分辨率": "未知或者有多个，请查具体属性表",
+    "id": "LANDSAT/LM03/C02/T2",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\LANDSAT_LM03_C02_T2.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\LANDSAT_LM03_C02_T2.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/LANDSAT_LM03_C02_T2?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "1982-08-14T18:22:17Z–1992-08-28T07:14:35Z",
+    "频率": "16 天",
+    "name": "USGS Landsat 4 MSS Collection 2 Tier 1 Raw Scenes",
+    "空间分辨率": "未知或者有多个，请查具体属性表",
+    "id": "LANDSAT/LM04/C02/T1",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\LANDSAT_LM04_C02_T1.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\LANDSAT_LM04_C02_T1.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/LANDSAT_LM04_C02_T1?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "1982-08-06T20:50:11Z–1992-10-15T05:31:24Z",
+    "频率": "16 天",
+    "name": "USGS Landsat 4 MSS Collection 2 Tier 2 Raw Scenes",
+    "空间分辨率": "未知或者有多个，请查具体属性表",
+    "id": "LANDSAT/LM04/C02/T2",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\LANDSAT_LM04_C02_T2.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\LANDSAT_LM04_C02_T2.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/LANDSAT_LM04_C02_T2?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "1984-04-07T10:04:11Z–2013-01-01T16:51:58Z",
+    "频率": "16 天",
+    "name": "USGS Landsat 5 MSS Collection 2 Tier 1 Raw Scenes",
+    "空间分辨率": "未知或者有多个，请查具体属性表",
+    "id": "LANDSAT/LM05/C02/T1",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\LANDSAT_LM05_C02_T1.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\LANDSAT_LM05_C02_T1.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/LANDSAT_LM05_C02_T1?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "1984-04-07T10:04:11Z–2013-01-01T16:51:58Z",
+    "频率": "16 天",
+    "name": "USGS Landsat 5 MSS Collection 2 Tier 2 Raw Scenes",
+    "空间分辨率": "未知或者有多个，请查具体属性表",
+    "id": "LANDSAT/LM05/C02/T2",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\LANDSAT_LM05_C02_T2.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\LANDSAT_LM05_C02_T2.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/LANDSAT_LM05_C02_T2?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2000-03-05T00:00:00Z–2024-03-05T00:00:00Z",
+    "频率": "1 年",
+    "name": "MOD44B.061 Terra Vegetation Continuous Fields Yearly Global 250m",
+    "空间分辨率": "250 米",
+    "id": "MODIS/061/MOD44B",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_061_MOD44B.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_061_MOD44B.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_006_MOD44B?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2000-01-01T00:00:00Z–2015-01-01T00:00:00Z",
+    "频率": "1 年",
+    "name": "MOD44W.006 Terra Land Water Mask Derived From MODIS and SRTM Yearly Global 250m",
+    "空间分辨率": "250 米",
+    "id": "MODIS/006/MOD44W",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_006_MOD44W.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_006_MOD44W.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_006_MOD44W?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2000-02-24T00:00:00Z–2023-02-17T00:00:00Z",
+    "频率": "1 天",
+    "name": "MODOCGA.006 Terra Ocean Reflectance Daily Global 1km",
+    "空间分辨率": "未知或者有多个，请查具体属性表",
+    "id": "MODIS/006/MODOCGA",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_006_MODOCGA.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_006_MODOCGA.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_006_MODOCGA?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2002-07-04T00:00:00Z–2023-02-25T00:00:00Z",
+    "频率": "1 天",
+    "name": "MYDOCGA.006 Aqua Ocean Reflectance Daily Global 1km",
+    "空间分辨率": "未知或者有多个，请查具体属性表",
+    "id": "MODIS/006/MYDOCGA",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_006_MYDOCGA.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_006_MYDOCGA.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_006_MYDOCGA?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2001-01-01T00:00:00Z–2024-01-01T00:00:00Z",
+    "频率": "1 年",
+    "name": "MCD12C1.061 MODIS Land Cover Type Yearly Global 0.05 Deg CMG",
+    "空间分辨率": "未知或者有多个，请查具体属性表",
+    "id": "MODIS/061/MCD12C1",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_061_MCD12C1.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_061_MCD12C1.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_061_MCD12C1?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2001-01-01T00:00:00Z–2024-01-01T00:00:00Z",
+    "频率": "1 年",
+    "name": "MCD12Q1.061 MODIS Land Cover Type Yearly Global 500m",
+    "空间分辨率": "未知或者有多个，请查具体属性表",
+    "id": "MODIS/061/MCD12Q1",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_061_MCD12Q1.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_061_MCD12Q1.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_061_MCD12Q1?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2001-01-01T00:00:00Z–2024-01-01T00:00:00Z",
+    "频率": "1 年",
+    "name": "MCD12Q2.006 Land Cover Dynamics Yearly Global 500m",
+    "空间分辨率": "未知或者有多个，请查具体属性表",
+    "id": "MODIS/061/MCD12Q2",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_061_MCD12Q2.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_061_MCD12Q2.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_061_MCD12Q2?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2002-07-04T00:00:00Z–2025-10-28T00:00:00Z",
+    "频率": "4 天",
+    "name": "MCD15A3H.061 MODIS Leaf Area Index/FPAR 4-Day Global 500m",
+    "空间分辨率": "500 米",
+    "id": "MODIS/061/MCD15A3H",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_061_MCD15A3H.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_061_MCD15A3H.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_061_MCD15A3H?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2000-03-03T00:00:00Z–2025-10-01T00:00:00Z",
+    "频率": "1 天",
+    "name": "MCD18A1.062 Surface Radiation Daily/3-Hour",
+    "空间分辨率": "500 米",
+    "id": "MODIS/062/MCD18A1",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_062_MCD18A1.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_062_MCD18A1.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_061_MCD18A1?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2000-02-24T00:00:00Z–2025-10-01T00:00:00Z",
+    "频率": "1 天",
+    "name": "MCD18C2.062 Photosynthetically Active Radiation Daily 3-Hour",
+    "空间分辨率": "500 米",
+    "id": "MODIS/062/MCD18C2",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_062_MCD18C2.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_062_MCD18C2.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_061_MCD18C2?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2000-12-21T00:00:00Z–2025-11-01T23:55:00Z",
+    "频率": "1 天",
+    "name": "MCD19A1.061: Land Surface BRF Daily L2G Global 500m and 1km",
+    "空间分辨率": "1000 米",
+    "id": "MODIS/061/MCD19A1_GRANULES",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_061_MCD19A1_GRANULES.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_061_MCD19A1_GRANULES.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_061_MCD19A1_GRANULES?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2000-02-24T00:00:00Z–2025-11-01T23:55:00Z",
+    "频率": "1 天",
+    "name": "MCD19A2.061: Terra & Aqua MAIAC Land Aerosol Optical Depth Daily 1km",
+    "空间分辨率": "1000 米",
+    "id": "MODIS/061/MCD19A2_GRANULES",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_061_MCD19A2_GRANULES.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_061_MCD19A2_GRANULES.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_061_MCD19A2_GRANULES?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2000-02-24T00:00:00Z–2025-10-25T00:00:00Z",
+    "频率": "1 天",
+    "name": "MCD43A1.061 MODIS BRDF-Albedo Model Parameters Daily 500m",
+    "空间分辨率": "500 米",
+    "id": "MODIS/061/MCD43A1",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_061_MCD43A1.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_061_MCD43A1.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_061_MCD43A1?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2000-02-24T00:00:00Z–2025-10-25T00:00:00Z",
+    "频率": "1 天",
+    "name": "MCD43A2.061 MODIS BRDF-Albedo Quality Daily 500m",
+    "空间分辨率": "500 米",
+    "id": "MODIS/061/MCD43A2",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_061_MCD43A2.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_061_MCD43A2.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_061_MCD43A2?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2000-02-24T00:00:00Z–2025-10-25T00:00:00Z",
+    "频率": "1 天",
+    "name": "MCD43A3.061 MODIS Albedo Daily 500m",
+    "空间分辨率": "500 米",
+    "id": "MODIS/061/MCD43A3",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_061_MCD43A3.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_061_MCD43A3.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_061_MCD43A3?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2000-02-24T00:00:00Z–2025-10-25T00:00:00Z",
+    "频率": "1 天",
+    "name": "MCD43A4.061 MODIS Nadir BRDF-Adjusted Reflectance Daily 500m",
+    "空间分辨率": "500 米",
+    "id": "MODIS/061/MCD43A4",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_061_MCD43A4.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_061_MCD43A4.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_061_MCD43A4?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2000-02-24T00:00:00Z–2025-10-25T00:00:00Z",
+    "频率": "1 天",
+    "name": "MCD43C3.061 BRDF/Albedo Daily L3 0.05 Deg CMG",
+    "空间分辨率": "5,600 米",
+    "id": "MODIS/061/MCD43C3",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_061_MCD43C3.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_061_MCD43C3.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_061_MCD43C3?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2000-11-01T00:00:00Z–2025-08-01T00:00:00Z",
+    "频率": "1 个月",
+    "name": "MCD64A1.061 MODIS Burned Area Monthly Global 500m",
+    "空间分辨率": "500 米",
+    "id": "MODIS/061/MCD64A1",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_061_MCD64A1.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_061_MCD64A1.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_061_MCD64A1?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2000-02-01T00:00:00Z–2025-10-01T00:00:00Z",
+    "频率": "1 个月",
+    "name": "MOD08_M3.061 Terra Atmosphere Monthly Global Product",
+    "空间分辨率": "111,320 米",
+    "id": "MODIS/061/MOD08_M3",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_061_MOD08_M3.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_061_MOD08_M3.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_061_MOD08_M3?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2000-02-18T00:00:00Z–2025-10-24T00:00:00Z",
+    "频率": "8 天",
+    "name": "MOD09A1.061 Terra Surface Reflectance 8-Day Global 500m",
+    "空间分辨率": "500 米",
+    "id": "MODIS/061/MOD09A1",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_061_MOD09A1.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_061_MOD09A1.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_061_MOD09A1?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2000-02-24T00:00:00Z–2025-11-01T00:00:00Z",
+    "频率": "1 天",
+    "name": "MOD09CMG.061 Terra Surface Reflectance Daily L3 Global 0.05 Deg CMG",
+    "空间分辨率": "5,600 米",
+    "id": "MODIS/061/MOD09CMG",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_061_MOD09CMG.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_061_MOD09CMG.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_061_MOD09CMG?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2000-02-24T00:00:00Z–2025-11-01T00:00:00Z",
+    "频率": "1 天",
+    "name": "MOD09GA.061 Terra Surface Reflectance Daily Global 1km and 500m",
+    "空间分辨率": "未知或者有多个，请查具体属性表",
+    "id": "MODIS/061/MOD09GA",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_061_MOD09GA.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_061_MOD09GA.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_061_MOD09GA?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2000-02-24T00:00:00Z–2025-11-01T00:00:00Z",
+    "频率": "1 天",
+    "name": "MOD09GQ.061 Terra Surface Reflectance Daily Global 250m",
+    "空间分辨率": "250 米",
+    "id": "MODIS/061/MOD09GQ",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_061_MOD09GQ.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_061_MOD09GQ.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_061_MOD09GQ?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2000-02-18T00:00:00Z–2025-10-24T00:00:00Z",
+    "频率": "8 天",
+    "name": "MOD09Q1.061 Terra Surface Reflectance 8-Day Global 250m",
+    "空间分辨率": "250 米",
+    "id": "MODIS/061/MOD09Q1",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_061_MOD09Q1.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_061_MOD09Q1.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_061_MOD09Q1?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2000-02-24T00:00:00Z–2025-11-02T00:00:00Z",
+    "频率": "1 天",
+    "name": "MOD10A1.061 Terra Snow Cover Daily Global 500m",
+    "空间分辨率": "500 米",
+    "id": "MODIS/061/MOD10A1",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_061_MOD10A1.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_061_MOD10A1.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_061_MOD10A1?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2000-02-24T00:00:00Z–2025-11-01T00:00:00Z",
+    "频率": "1 天",
+    "name": "MOD11A1.061 Terra Land Surface Temperature and Emissivity Daily Global 1km",
+    "空间分辨率": "1000 米",
+    "id": "MODIS/061/MOD11A1",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_061_MOD11A1.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_061_MOD11A1.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_061_MOD11A1?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2000-02-18T00:00:00Z–2025-10-24T00:00:00Z",
+    "频率": "8 天",
+    "name": "MOD11A2.061 Terra Land Surface Temperature and Emissivity 8-Day Global 1km",
+    "空间分辨率": "1000 米",
+    "id": "MODIS/061/MOD11A2",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_061_MOD11A2.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_061_MOD11A2.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_061_MOD11A2?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2000-02-18T00:00:00Z–2025-10-16T00:00:00Z",
+    "频率": "16 天",
+    "name": "MOD13A1.061 Terra Vegetation Indices 16-Day Global 500m",
+    "空间分辨率": "500 米",
+    "id": "MODIS/061/MOD13A1",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_061_MOD13A1.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_061_MOD13A1.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_061_MOD13A1?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2000-02-18T00:00:00Z–2025-10-16T00:00:00Z",
+    "频率": "16 天",
+    "name": "MOD13A2.061 Terra Vegetation Indices 16-Day Global 1km",
+    "空间分辨率": "1000 米",
+    "id": "MODIS/061/MOD13A2",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_061_MOD13A2.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_061_MOD13A2.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_061_MOD13A2?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2000-02-01T00:00:00Z–2025-10-01T00:00:00Z",
+    "频率": "1 个月",
+    "name": "MOD13A3.061 Vegetation Indices Monthly L3 Global 1 km SIN Grid",
+    "空间分辨率": "1000 米",
+    "id": "MODIS/061/MOD13A3",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_061_MOD13A3.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_061_MOD13A3.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_061_MOD13A3?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2000-02-18T00:00:00Z–2025-10-16T00:00:00Z",
+    "频率": "16 天",
+    "name": "MOD13C1.061: Terra Vegetation Indices 16-Day L3 Global 0.05 Deg Climate Modeling Grid",
+    "空间分辨率": "5,600 米",
+    "id": "MODIS/061/MOD13C1",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_061_MOD13C1.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_061_MOD13C1.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_061_MOD13C1?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2000-02-18T00:00:00Z–2025-10-16T00:00:00Z",
+    "频率": "16 天",
+    "name": "MOD13Q1.061 Terra Vegetation Indices 16-Day Global 250m",
+    "空间分辨率": "250 米",
+    "id": "MODIS/061/MOD13Q1",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_061_MOD13Q1.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_061_MOD13Q1.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_061_MOD13Q1?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2000-02-24T00:00:00Z–2025-10-31T00:00:00Z",
+    "频率": "1 天",
+    "name": "MOD14A1.061: Terra Thermal Anomalies & Fire Daily Global 1km",
+    "空间分辨率": "1000 米",
+    "id": "MODIS/061/MOD14A1",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_061_MOD14A1.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_061_MOD14A1.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_061_MOD14A1?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2000-02-18T00:00:00Z–2025-10-24T00:00:00Z",
+    "频率": "8 天",
+    "name": "MOD14A2.061: Terra Thermal Anomalies & Fire 8-Day Global 1km",
+    "空间分辨率": "1000 米",
+    "id": "MODIS/061/MOD14A2",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_061_MOD14A2.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_061_MOD14A2.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_061_MOD14A2?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2000-02-18T00:00:00Z–2025-10-24T00:00:00Z",
+    "频率": "8 天",
+    "name": "MOD15A2H.061: Terra Leaf Area Index/FPAR 8-Day Global 500m",
+    "空间分辨率": "500 米",
+    "id": "MODIS/061/MOD15A2H",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_061_MOD15A2H.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_061_MOD15A2H.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_061_MOD15A2H?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2021-01-01T00:00:00Z–2025-10-16T00:00:00Z",
+    "频率": "8 天",
+    "name": "MOD16A2.061: Terra Net Evapotranspiration 8-Day Global 500m",
+    "空间分辨率": "500 米",
+    "id": "MODIS/061/MOD16A2",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_061_MOD16A2.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_061_MOD16A2.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_061_MOD16A2?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2000-01-01T00:00:00Z–2024-12-26T00:00:00Z",
+    "频率": "8 天",
+    "name": "MOD16A2GF.061: Terra Net Evapotranspiration Gap-Filled 8-Day Global 500m",
+    "空间分辨率": "未知或者有多个，请查具体属性表",
+    "id": "MODIS/061/MOD16A2GF",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_061_MOD16A2GF.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_061_MOD16A2GF.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_061_MOD16A2GF?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2021-01-01T00:00:00Z–2025-10-24T00:00:00Z",
+    "频率": "8 天",
+    "name": "MOD17A2H.061: Terra Gross Primary Productivity 8-Day Global 500m",
+    "空间分辨率": "500 米",
+    "id": "MODIS/061/MOD17A2H",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_061_MOD17A2H.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_061_MOD17A2H.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_061_MOD17A2H?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2001-01-01T00:00:00Z–2024-01-01T00:00:00Z",
+    "频率": "1 年",
+    "name": "MOD17A3HGF.061: Terra Net Primary Production Gap-Filled Yearly Global 500m",
+    "空间分辨率": "未知或者有多个，请查具体属性表",
+    "id": "MODIS/061/MOD17A3HGF",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_061_MOD17A3HGF.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_061_MOD17A3HGF.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_061_MOD17A3HGF?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2000-02-24T00:00:00Z–2025-11-01T00:00:00Z",
+    "频率": "1 天",
+    "name": "MOD21A1D.061 Terra Land Surface Temperature and 3-Band Emissivity Daily Global 1km",
+    "空间分辨率": "1000 米",
+    "id": "MODIS/061/MOD21A1D",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_061_MOD21A1D.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_061_MOD21A1D.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_061_MOD21A1D?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2000-02-24T00:00:00Z–2025-11-01T00:00:00Z",
+    "频率": "1 天",
+    "name": "MOD21A1N.061 Terra Land Surface Temperature and 3-Band Emissivity Daily Global 1km",
+    "空间分辨率": "1000 米",
+    "id": "MODIS/061/MOD21A1N",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_061_MOD21A1N.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_061_MOD21A1N.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_061_MOD21A1N?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2000-02-24T00:00:00Z–2025-11-01T00:00:00Z",
+    "频率": "1 天",
+    "name": "MOD21C1.061 Terra Land Surface Temperature and 3-Band Emissivity Daily L3 Global 0.05 Deg CMG",
+    "空间分辨率": "1000 米",
+    "id": "MODIS/061/MOD21C1",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_061_MOD21C1.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_061_MOD21C1.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_061_MOD21C1?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2000-02-24T00:00:00Z–2025-10-24T00:00:00Z",
+    "频率": "8 天",
+    "name": "MOD21C2.061 Terra Land Surface Temperature and 3-Band Emissivity 8-Day L3 Global 0.05 Deg CMG",
+    "空间分辨率": "1000 米",
+    "id": "MODIS/061/MOD21C2",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_061_MOD21C2.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_061_MOD21C2.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_061_MOD21C2?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2000-02-24T00:00:00Z–2025-10-01T00:00:00Z",
+    "频率": "1 个月",
+    "name": "MOD21C3.061 Terra Land Surface Temperature and 3-Band Emissivity Monthly L3 Global 0.05 Deg CMG",
+    "空间分辨率": "1000 米",
+    "id": "MODIS/061/MOD21C3",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_061_MOD21C3.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_061_MOD21C3.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_061_MOD21C3?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2002-07-01T00:00:00Z–2025-10-01T00:00:00Z",
+    "频率": "1 个月",
+    "name": "MYD08_M3.061 Aqua Atmosphere Monthly Global Product",
+    "空间分辨率": "111,320 米",
+    "id": "MODIS/061/MYD08_M3",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_061_MYD08_M3.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_061_MYD08_M3.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_061_MYD08_M3?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2002-07-04T00:00:00Z–2025-10-24T00:00:00Z",
+    "频率": "8 天",
+    "name": "MYD09A1.061 Aqua Surface Reflectance 8-Day Global 500m",
+    "空间分辨率": "500 米",
+    "id": "MODIS/061/MYD09A1",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_061_MYD09A1.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_061_MYD09A1.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_061_MYD09A1?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2002-07-04T00:00:00Z–2025-11-01T00:00:00Z",
+    "频率": "1 天",
+    "name": "MYD09GA.061 Aqua Surface Reflectance Daily Global 1km and 500m",
+    "空间分辨率": "未知或者有多个，请查具体属性表",
+    "id": "MODIS/061/MYD09GA",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_061_MYD09GA.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_061_MYD09GA.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_061_MYD09GA?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2002-07-04T00:00:00Z–2025-11-01T00:00:00Z",
+    "频率": "1 天",
+    "name": "MYD09GQ.061 Aqua Surface Reflectance Daily Global 250m",
+    "空间分辨率": "250 米",
+    "id": "MODIS/061/MYD09GQ",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_061_MYD09GQ.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_061_MYD09GQ.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_061_MYD09GQ?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2002-07-04T00:00:00Z–2025-10-24T00:00:00Z",
+    "频率": "8 天",
+    "name": "MYD09Q1.061 Aqua Surface Reflectance 8-Day Global 250m",
+    "空间分辨率": "250 米",
+    "id": "MODIS/061/MYD09Q1",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_061_MYD09Q1.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_061_MYD09Q1.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_061_MYD09Q1?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2002-07-04T00:00:00Z–2025-11-02T00:00:00Z",
+    "频率": "1 天",
+    "name": "MYD10A1.061 Aqua Snow Cover Daily Global 500m",
+    "空间分辨率": "500 米",
+    "id": "MODIS/061/MYD10A1",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_061_MYD10A1.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_061_MYD10A1.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_061_MYD10A1?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2002-07-04T00:00:00Z–2025-11-01T00:00:00Z",
+    "频率": "1 天",
+    "name": "MYD11A1.061 Aqua Land Surface Temperature and Emissivity Daily Global 1km",
+    "空间分辨率": "1000 米",
+    "id": "MODIS/061/MYD11A1",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_061_MYD11A1.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_061_MYD11A1.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_061_MYD11A1?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2002-07-04T00:00:00Z–2025-10-24T00:00:00Z",
+    "频率": "8 天",
+    "name": "MYD11A2.061 Aqua Land Surface Temperature and Emissivity 8-Day Global 1km",
+    "空间分辨率": "1000 米",
+    "id": "MODIS/061/MYD11A2",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_061_MYD11A2.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_061_MYD11A2.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_061_MYD11A2?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2002-07-04T00:00:00Z–2025-10-08T00:00:00Z",
+    "频率": "16 天",
+    "name": "MYD13A1.061 Aqua Vegetation Indices 16-Day Global 500m",
+    "空间分辨率": "500 米",
+    "id": "MODIS/061/MYD13A1",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_061_MYD13A1.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_061_MYD13A1.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_061_MYD13A1?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2002-07-04T00:00:00Z–2025-10-08T00:00:00Z",
+    "频率": "16 天",
+    "name": "MYD13A2.061 Aqua Vegetation Indices 16-Day Global 1km",
+    "空间分辨率": "1000 米",
+    "id": "MODIS/061/MYD13A2",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_061_MYD13A2.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_061_MYD13A2.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_061_MYD13A2?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2002-07-01T00:00:00Z–2025-09-01T00:00:00Z",
+    "频率": "1 个月",
+    "name": "MYD13A3.061 Aqua Vegetation Indices Monthly L3 Global 1 km SIN Grid",
+    "空间分辨率": "1000 米",
+    "id": "MODIS/061/MYD13A3",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_061_MYD13A3.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_061_MYD13A3.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_061_MYD13A3?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2002-07-04T00:00:00Z–2025-10-08T00:00:00Z",
+    "频率": "16 天",
+    "name": "MYD13C1.061: Aqua Vegetation Indices 16-Day L3 Global 0.05 Deg CMG",
+    "空间分辨率": "5,600 米",
+    "id": "MODIS/061/MYD13C1",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_061_MYD13C1.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_061_MYD13C1.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_061_MYD13C1?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2002-07-04T00:00:00Z–2025-10-08T00:00:00Z",
+    "频率": "16 天",
+    "name": "MYD13Q1.061 Aqua Vegetation Indices 16-Day Global 250m",
+    "空间分辨率": "250 米",
+    "id": "MODIS/061/MYD13Q1",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_061_MYD13Q1.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_061_MYD13Q1.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_061_MYD13Q1?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2002-07-04T00:00:00Z–2025-10-31T00:00:00Z",
+    "频率": "1 天",
+    "name": "MYD14A1.061: Aqua Thermal Anomalies & Fire Daily Global 1km",
+    "空间分辨率": "1000 米",
+    "id": "MODIS/061/MYD14A1",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_061_MYD14A1.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_061_MYD14A1.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_061_MYD14A1?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2002-07-04T00:00:00Z–2025-10-24T00:00:00Z",
+    "频率": "8 天",
+    "name": "MYD14A2.061: Aqua Thermal Anomalies & Fire 8-Day Global 1km",
+    "空间分辨率": "1000 米",
+    "id": "MODIS/061/MYD14A2",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_061_MYD14A2.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_061_MYD14A2.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_061_MYD14A2?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2002-07-04T00:00:00Z–2025-10-24T00:00:00Z",
+    "频率": "8 天",
+    "name": "MYD15A2H.061: Aqua Leaf Area Index/FPAR 8-Day Global 500m",
+    "空间分辨率": "500 米",
+    "id": "MODIS/061/MYD15A2H",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_061_MYD15A2H.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_061_MYD15A2H.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_061_MYD15A2H?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2021-01-01T00:00:00Z–2025-10-24T00:00:00Z",
+    "频率": "8 天",
+    "name": "MYD17A2H.061: Aqua Gross Primary Productivity 8-Day Global 500m",
+    "空间分辨率": "500 米",
+    "id": "MODIS/061/MYD17A2H",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_061_MYD17A2H.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_061_MYD17A2H.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_061_MYD17A2H?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2001-01-01T00:00:00Z–2024-01-01T00:00:00Z",
+    "频率": "1 年",
+    "name": "MYD17A3HGF.061: Aqua Net Primary Production Gap-Filled Yearly Global 500m",
+    "空间分辨率": "未知或者有多个，请查具体属性表",
+    "id": "MODIS/061/MYD17A3HGF",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_061_MYD17A3HGF.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_061_MYD17A3HGF.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_061_MYD17A3HGF?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2000-02-24T00:00:00Z–2025-11-01T00:00:00Z",
+    "频率": "1 天",
+    "name": "MYD21A1D.061 Aqua Land Surface Temperature and 3-Band Emissivity Daily Global 1km",
+    "空间分辨率": "1000 米",
+    "id": "MODIS/061/MYD21A1D",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_061_MYD21A1D.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_061_MYD21A1D.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_061_MYD21A1D?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2000-02-24T00:00:00Z–2025-11-01T00:00:00Z",
+    "频率": "1 天",
+    "name": "MYD21A1N.061 Aqua Land Surface Temperature and 3-Band Emissivity Daily Global 1km",
+    "空间分辨率": "1000 米",
+    "id": "MODIS/061/MYD21A1N",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_061_MYD21A1N.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_061_MYD21A1N.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_061_MYD21A1N?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2000-02-24T00:00:00Z–2025-11-01T00:00:00Z",
+    "频率": "1 天",
+    "name": "MYD21C1.061 Aqua Land Surface Temperature and 3-Band Emissivity Daily L3 Global 0.05 Deg CMG",
+    "空间分辨率": "1000 米",
+    "id": "MODIS/061/MYD21C1",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_061_MYD21C1.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_061_MYD21C1.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_061_MYD21C1?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2000-02-24T00:00:00Z–2025-10-24T00:00:00Z",
+    "频率": "8 天",
+    "name": "MYD21C2.061 Aqua Land Surface Temperature and 3-Band Emissivity 8-Day L3 Global 0.05 Deg CMG",
+    "空间分辨率": "1000 米",
+    "id": "MODIS/061/MYD21C2",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_061_MYD21C2.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_061_MYD21C2.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_061_MYD21C2?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2000-02-24T00:00:00Z–2025-10-01T00:00:00Z",
+    "频率": "1 个月",
+    "name": "MYD21C3.061 Aqua Land Surface Temperature and 3-Band Emissivity Monthly L3 Global 0.05 Deg CMG",
+    "空间分辨率": "1000 米",
+    "id": "MODIS/061/MYD21C3",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_061_MYD21C3.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_061_MYD21C3.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_061_MYD21C3?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2000-02-24T00:00:00Z–2023-02-10T00:00:00Z",
+    "频率": "1 天",
+    "name": "MODIS Combined 16-Day BAI",
+    "空间分辨率": "未知或者有多个，请查具体属性表",
+    "id": "MODIS/MCD43A4_006_BAI",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_MCD43A4_006_BAI.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_MCD43A4_006_BAI.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_MCD43A4_006_BAI?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2000-02-24T00:00:00Z–2023-02-10T00:00:00Z",
+    "频率": "1 天",
+    "name": "MODIS Combined 16-Day EVI",
+    "空间分辨率": "未知或者有多个，请查具体属性表",
+    "id": "MODIS/MCD43A4_006_EVI",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_MCD43A4_006_EVI.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_MCD43A4_006_EVI.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_MCD43A4_006_EVI?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2000-02-24T00:00:00Z–2023-02-10T00:00:00Z",
+    "频率": "1 天",
+    "name": "MODIS Combined 16-Day NDSI",
+    "空间分辨率": "未知或者有多个，请查具体属性表",
+    "id": "MODIS/MCD43A4_006_NDSI",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_MCD43A4_006_NDSI.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_MCD43A4_006_NDSI.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_MCD43A4_006_NDSI?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2000-02-24T00:00:00Z–2023-02-10T00:00:00Z",
+    "频率": "1 天",
+    "name": "MODIS Combined 16-Day NDVI",
+    "空间分辨率": "未知或者有多个，请查具体属性表",
+    "id": "MODIS/MCD43A4_006_NDVI",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_MCD43A4_006_NDVI.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_MCD43A4_006_NDVI.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_MCD43A4_006_NDVI?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2000-02-24T00:00:00Z–2023-02-10T00:00:00Z",
+    "频率": "1 天",
+    "name": "MODIS Combined 16-Day NDWI",
+    "空间分辨率": "未知或者有多个，请查具体属性表",
+    "id": "MODIS/MCD43A4_006_NDWI",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_MCD43A4_006_NDWI.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_MCD43A4_006_NDWI.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_MCD43A4_006_NDWI?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2000-02-24T00:00:00Z–2023-02-17T00:00:00Z",
+    "频率": "1 天",
+    "name": "MODIS Terra Daily BAI",
+    "空间分辨率": "未知或者有多个，请查具体属性表",
+    "id": "MODIS/MOD09GA_006_BAI",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_MOD09GA_006_BAI.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_MOD09GA_006_BAI.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_MOD09GA_006_BAI?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2000-02-24T00:00:00Z–2023-02-17T00:00:00Z",
+    "频率": "1 天",
+    "name": "MODIS Terra Daily EVI",
+    "空间分辨率": "未知或者有多个，请查具体属性表",
+    "id": "MODIS/MOD09GA_006_EVI",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_MOD09GA_006_EVI.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_MOD09GA_006_EVI.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_MOD09GA_006_EVI?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2000-02-24T00:00:00Z–2023-02-17T00:00:00Z",
+    "频率": "1 天",
+    "name": "MODIS Terra Daily NDSI",
+    "空间分辨率": "未知或者有多个，请查具体属性表",
+    "id": "MODIS/MOD09GA_006_NDSI",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_MOD09GA_006_NDSI.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_MOD09GA_006_NDSI.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_MOD09GA_006_NDSI?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2000-02-24T00:00:00Z–2023-02-17T00:00:00Z",
+    "频率": "1 天",
+    "name": "MODIS Terra Daily NDVI",
+    "空间分辨率": "未知或者有多个，请查具体属性表",
+    "id": "MODIS/MOD09GA_006_NDVI",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_MOD09GA_006_NDVI.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_MOD09GA_006_NDVI.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_MOD09GA_006_NDVI?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2000-02-24T00:00:00Z–2023-02-17T00:00:00Z",
+    "频率": "1 天",
+    "name": "MODIS Terra Daily NDWI",
+    "空间分辨率": "未知或者有多个，请查具体属性表",
+    "id": "MODIS/MOD09GA_006_NDWI",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_MOD09GA_006_NDWI.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_MOD09GA_006_NDWI.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_MOD09GA_006_NDWI?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2000-02-24T00:00:00Z–2000-02-24T00:00:00Z",
+    "name": "MOD44W.005 Land Water Mask Derived From MODIS and SRTM",
+    "空间分辨率": "250 米",
+    "id": "MODIS/MOD44W/MOD44W_005_2000_02_24",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_MOD44W_MOD44W_005_2000_02_24.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_MOD44W_MOD44W_005_2000_02_24.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_MOD44W_MOD44W_005_2000_02_24?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2002-07-04T00:00:00Z–2023-02-25T00:00:00Z",
+    "频率": "1 天",
+    "name": "MODIS Aqua Daily BAI",
+    "空间分辨率": "未知或者有多个，请查具体属性表",
+    "id": "MODIS/MYD09GA_006_BAI",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_MYD09GA_006_BAI.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_MYD09GA_006_BAI.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_MYD09GA_006_BAI?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2002-07-04T00:00:00Z–2023-02-25T00:00:00Z",
+    "频率": "1 天",
+    "name": "MODIS Aqua Daily EVI",
+    "空间分辨率": "未知或者有多个，请查具体属性表",
+    "id": "MODIS/MYD09GA_006_EVI",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_MYD09GA_006_EVI.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_MYD09GA_006_EVI.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_MYD09GA_006_EVI?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2002-07-04T00:00:00Z–2023-02-25T00:00:00Z",
+    "频率": "1 天",
+    "name": "MODIS Aqua Daily NDSI",
+    "空间分辨率": "未知或者有多个，请查具体属性表",
+    "id": "MODIS/MYD09GA_006_NDSI",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_MYD09GA_006_NDSI.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_MYD09GA_006_NDSI.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_MYD09GA_006_NDSI?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2002-07-04T00:00:00Z–2023-02-25T00:00:00Z",
+    "频率": "1 天",
+    "name": "MODIS Aqua Daily NDVI",
+    "空间分辨率": "未知或者有多个，请查具体属性表",
+    "id": "MODIS/MYD09GA_006_NDVI",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_MYD09GA_006_NDVI.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_MYD09GA_006_NDVI.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_MYD09GA_006_NDVI?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2002-07-04T00:00:00Z–2023-02-25T00:00:00Z",
+    "频率": "1 天",
+    "name": "MODIS Aqua Daily NDWI",
+    "空间分辨率": "未知或者有多个，请查具体属性表",
+    "id": "MODIS/MYD09GA_006_NDWI",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_MYD09GA_006_NDWI.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_MYD09GA_006_NDWI.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_MYD09GA_006_NDWI?hl=zh-cn"
+  },
+  {
+    "数据集可用时间": "2000-01-01T00:00:00Z–2014-12-27T00:00:00Z",
+    "频率": "8 天",
+    "name": "MOD16A2: MODIS Global Terrestrial Evapotranspiration 8-Day Global 1km",
+    "空间分辨率": "未知或者有多个，请查具体属性表",
+    "id": "MODIS/NTSG/MOD16A2/105",
+    "attributes_table": "venv\\Include\\id_dst_info\\attributes\\MODIS_NTSG_MOD16A2_105.csv",
+    "bands_table": "venv\\Include\\id_dst_info\\bands\\MODIS_NTSG_MOD16A2_105.csv",
+    "url": "https://developers.google.cn/earth-engine/datasets/catalog/MODIS_NTSG_MOD16A2_105?hl=zh-cn"
+  }
+]
