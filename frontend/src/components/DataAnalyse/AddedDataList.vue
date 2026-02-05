@@ -25,23 +25,22 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
+
 import MapManager from '@/tools/mapManager';
 
 const mapManager = MapManager.getInstance();
 // 直接使用 MapManager 暴露的响应式计算属性
 const selectedRegionList = mapManager.selectedRegionList;
 
-/**
- * 处理删除地理数据
- * @param {string | number} id - 区域 ID
- */
-const handleRemoveGeoData = (id: string | number) => {
+// 处理删除地理数据
+const handleRemoveGeoData = (id) => {
   try {
     mapManager.removeRegion(id);
     console.log('删除数据成功');
   } catch (error) {
     console.error('Error removing geo data:', error);
+  
   }
 };
 </script>

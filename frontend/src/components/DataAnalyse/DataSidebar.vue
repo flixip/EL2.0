@@ -381,11 +381,10 @@ import {
   DataAnalysis, ArrowLeft, Histogram, Setting, Upload, 
   UploadFilled, Timer, Close, CirclePlus, Box, View, Delete, Loading, Document, Plus
 } from '@element-plus/icons-vue';
-import type { UploadFile } from 'element-plus';
 import MapManager from '@/tools/mapManager';
-import TableManager, { type CSVDataItem } from '@/tools/tableManager';
+import TableManager from '@/tools/tableManager';
 import geoDataService from '@/services/GeoDataService';
-import { Chart, registerables, type ChartTypeRegistry } from 'chart.js';
+import { Chart, registerables } from 'chart.js';
 import SearchSection from './SearchSection.vue';
 import AddedDataList from './AddedDataList.vue';
 
@@ -421,9 +420,6 @@ const openAddDialog = () => {
   showAddDialog.value = true;
 };
 
-/**
- * 解析表单中的 CSV 文本并更新字段选项
- */
 const parseFormText = () => {
   const { headers } = tableManager.parseCSV(addDataForm.value.rawText);
   addDataForm.value.headers = headers;
@@ -439,9 +435,6 @@ const parseFormText = () => {
   }
 };
 
-/**
- * 加载模板数据到添加对话框
- */
 const loadTemplateToDialog = () => {
   const text = tableManager.getTemplateCSVText();
   addDataForm.value.rawText = text;
@@ -449,11 +442,7 @@ const loadTemplateToDialog = () => {
   parseFormText();
 };
 
-/**
- * 处理文件上传到对话框
- * @param {UploadFile} file - 上传的文件对象
- */
-const handleUploadToDialog = (file: UploadFile) => {
+const handleUploadToDialog = (file: any) => {
   const reader = new FileReader();
   reader.onload = (e) => {
     const text = e.target?.result as string;
@@ -461,9 +450,7 @@ const handleUploadToDialog = (file: UploadFile) => {
     addDataForm.value.name = file.name;
     parseFormText();
   };
-  if (file.raw) {
-    reader.readAsText(file.raw);
-  }
+  reader.readAsText(file.raw);
   return false; // 阻止默认上传
 };
 
@@ -494,9 +481,6 @@ const handleLoadTemplate = async () => {
   mapManager.updateLayerStyles();
 };
 
-/**
- * 确认添加数据
- */
 const confirmAddData = async () => {
   if (!addDataForm.value.name || !addDataForm.value.rawText) return;
   
@@ -522,11 +506,7 @@ const confirmAddData = async () => {
 const showEditor = ref(false);
 const editingCSV = ref<{ id: string; name: string; text: string } | null>(null);
 
-/**
- * 处理查看/编辑 CSV
- * @param {CSVDataItem} item - CSV 数据项
- */
-const handleViewCSV = (item: CSVDataItem) => {
+const handleViewCSV = (item: any) => {
   editingCSV.value = {
     id: item.id,
     name: item.name,
@@ -535,9 +515,6 @@ const handleViewCSV = (item: CSVDataItem) => {
   showEditor.value = true;
 };
 
-/**
- * 保存 CSV 编辑
- */
 const saveCSVEdit = () => {
   if (editingCSV.value) {
     tableManager.updateCSV(editingCSV.value.id, editingCSV.value.text);
@@ -547,10 +524,6 @@ const saveCSVEdit = () => {
   }
 };
 
-/**
- * 处理删除 CSV
- * @param {string} id - 数据 ID
- */
 const handleRemoveCSV = (id: string) => {
   tableManager.removeCSV(id);
   mapManager.updateLayerStyles();
@@ -619,10 +592,8 @@ const updateChart = () => {
     label = `${mapManager.timeConfig.value.startYear + mapManager.timeConfig.value.yearIndex} 年数据`;
   }
 
-  // 使用类型断言 as any 是因为 chart.js 的类型定义在 Vue 组件中可能存在兼容性问题
-  // 或者是 chartType.value 的类型与 Chart.js 的 ChartTypeRegistry 键不完全匹配（尽管我们已经限制了 keys）
   chartInstance = new Chart(chartCanvas.value, {
-    type: chartType.value as keyof ChartTypeRegistry,
+    type: chartType.value as any,
     data: {
       labels,
       datasets: [{

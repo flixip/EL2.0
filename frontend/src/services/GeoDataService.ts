@@ -11,7 +11,7 @@ export interface GeoDataItem {
 
 export interface GeoJSONData {
   type: string;
-  features: any[]; // 使用 any 是因为 GeoJSON Feature 结构可能包含任意属性
+  features: any[];
 }
 
 // 地理数据映射表接口
@@ -47,11 +47,7 @@ export class GeoDataService {
     return GeoDataService.instance;
   }
 
-  /**
-   * 初始化数据
-   * 加载地理数据映射表，并解析省份和城市列表
-   * @returns {Promise<void>}
-   */
+  // 初始化数据
   public async initialize(): Promise<void> {
     if (this.loaded) {
       console.log('GeoDataService already initialized');
@@ -78,26 +74,17 @@ export class GeoDataService {
     }
   }
 
-  /**
-   * 检查初始化状态
-   * @returns {boolean} 是否已初始化
-   */
+  // 检查初始化状态
   public isInitialized(): boolean {
     return this.loaded;
   }
 
-  /**
-   * 获取初始化状态 (同 isInitialized，保留兼容性)
-   * @returns {boolean} 是否已初始化
-   */
+  // 获取初始化状态
   public getInitializedStatus(): boolean {
     return this.loaded;
   }
 
-  /**
-   * 加载地理数据映射表
-   * @returns {Promise<void>}
-   */
+  // 加载地理数据映射表
   private async loadGeoDataMap(): Promise<void> {
     try {
       // 使用 apiService 中的方法获取地理数据映射表
@@ -111,10 +98,7 @@ export class GeoDataService {
     }
   }
 
-  /**
-   * 加载省份数据
-   * 从映射表中提取省份信息
-   */
+  // 加载省份数据
   private loadProvinces(): void {
     if (!this.geoDataMap) return;
 
@@ -130,10 +114,7 @@ export class GeoDataService {
     }
   }
 
-  /**
-   * 加载城市数据
-   * 从映射表中提取城市信息
-   */
+  // 加载城市数据
   private loadCities(): void {
     if (!this.geoDataMap) return;
 
@@ -154,11 +135,7 @@ export class GeoDataService {
     }
   }
 
-  /**
-   * 搜索地理数据
-   * @param {string} query - 搜索关键词
-   * @returns {GeoDataItem[]} 匹配的地理数据项列表
-   */
+  // 搜索地理数据
   public search(query: string): GeoDataItem[] {
     if (!query || query.trim() === '') {
       return [];
@@ -186,11 +163,7 @@ export class GeoDataService {
     return uniqueResults.slice(0, 10);
   }
 
-  /**
-   * 加载地理数据 (GeoJSON)
-   * @param {GeoDataItem} item - 地理数据项
-   * @returns {Promise<GeoJSONData>} GeoJSON 数据
-   */
+  // 加载地理数据
   public async loadGeoJSONData(item: GeoDataItem): Promise<GeoJSONData> {
     try {
       // 使用 apiService 中的方法获取 GeoJSON 数据
@@ -207,21 +180,13 @@ export class GeoDataService {
     }
   }
 
-  /**
-   * 生成地理数据 URL
-   * @param {GeoDataItem} item - 地理数据项
-   * @returns {string} URL 字符串
-   */
+  // 生成地理数据URL
   public generateGeoDataUrl(item: GeoDataItem): string {
     // 使用 apiService 中的方法生成 URL
     return generateGeoDataUrl(item);
   }
 
-  /**
-   * 移除重复项
-   * @param {GeoDataItem[]} items - 地理数据项列表
-   * @returns {GeoDataItem[]} 去重后的列表
-   */
+  // 移除重复项
   private removeDuplicates(items: GeoDataItem[]): GeoDataItem[] {
     const seen = new Set<string>();
     return items.filter(item => {
@@ -234,28 +199,17 @@ export class GeoDataService {
     });
   }
 
-  /**
-   * 获取所有省份
-   * @returns {GeoDataItem[]} 省份列表
-   */
+  // 获取所有省份
   public getProvinces(): GeoDataItem[] {
     return [...this.provinces];
   }
 
-  /**
-   * 获取指定省份的城市
-   * @param {string} provinceName - 省份名称
-   * @returns {GeoDataItem[]} 城市列表
-   */
+  // 获取指定省份的城市
   public getCitiesByProvince(provinceName: string): GeoDataItem[] {
     return this.cities.filter(city => city.province === provinceName);
   }
 
-  /**
-   * 根据名称获取地理数据项
-   * @param {string} name - 区域名称
-   * @returns {GeoDataItem | null} 地理数据项
-   */
+  // 根据名称获取地理数据项
   public getGeoDataItemByName(name: string): GeoDataItem | null {
     // 先搜索省份
     const province = this.provinces.find(p => p.name === name);
@@ -266,10 +220,7 @@ export class GeoDataService {
     return this.cities.find(c => c.name === name) || null;
   }
 
-  /**
-   * 获取地理数据映射表
-   * @returns {GeoDataMap | null} 映射表
-   */
+  // 获取地理数据映射表
   public getGeoDataMap(): GeoDataMap | null {
     return this.geoDataMap;
   }
