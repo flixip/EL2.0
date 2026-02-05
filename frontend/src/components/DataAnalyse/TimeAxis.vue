@@ -83,7 +83,7 @@ const progress = computed(() => {
 const currentYear = computed(() => timeConfig.value.startYear + timeConfig.value.yearIndex);
 
 // 自动播放逻辑
-let playInterval: ReturnType<typeof setInterval> | null = null;
+let playInterval: any = null;
 
 const togglePlay = () => {
   timeConfig.value.isPlaying = !timeConfig.value.isPlaying;
@@ -97,8 +97,7 @@ const togglePlay = () => {
       }
     }, 1500);
   } else {
-    if (playInterval) clearInterval(playInterval);
-    playInterval = null;
+    clearInterval(playInterval);
   }
 };
 
@@ -127,10 +126,7 @@ const startDrag = (e: MouseEvent) => {
   
   if (timeConfig.value.isPlaying) {
     timeConfig.value.isPlaying = false;
-    if (playInterval) {
-      clearInterval(playInterval);
-      playInterval = null;
-    }
+    if (playInterval) clearInterval(playInterval);
   }
   
   const track = trackRef.value;

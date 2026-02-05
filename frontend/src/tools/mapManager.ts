@@ -2,8 +2,8 @@ import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import { type Layer } from 'leaflet';
 import { getGeojson, pathmap } from '@/tools/apiService';
-import geoDataService, { type GeoDataItem } from '@/services/GeoDataService';
-import { ref, shallowRef, computed, watch } from 'vue';
+import geoDataService from '@/services/GeoDataService';
+import { ref, shallowRef, computed } from 'vue';
 import TableManager from './tableManager';
 
 // 地图初始化配置接口
@@ -49,7 +49,6 @@ export default class MapManager {
   private layerControl: L.Control.Layers | null = null;
   
   // 使用 ref 存储选中区域，使组件可以响应式地获取列表
-  // 使用 any 是因为 info 可能包含不同结构的地理信息数据，但主要是 GeoDataItem
   private selectedRegions = ref<Map<string, { info: any; layer: L.Layer; labels?: L.LayerGroup }>>(new Map());
 
   // 可视化配置状态
@@ -67,23 +66,17 @@ export default class MapManager {
   public timeConfig = ref<TimeConfig>({
     yearIndex: 0,
     startYear: 2000,
-    yearRange: 0,
+    yearRange: computed(() => this.tableManager.yearRange.value) as any,
     isPlaying: false
   });
 
   // 当前选中的区县名称
   public selectedDistrict = ref<string | null>(null);
 
-  private constructor() {
-    // 监听 tableManager 的年份范围变化，同步到 timeConfig
-    watch(() => this.tableManager.yearRange.value, (newVal) => {
-      this.timeConfig.value.yearRange = newVal;
-    });
-  }
+  private constructor() {}
 
   /**
    * 获取单例实例
-   * @returns {MapManager} MapManager 实例
    */
   public static getInstance(): MapManager {
     if (!MapManager.instance) {
@@ -95,9 +88,8 @@ export default class MapManager {
   /**
    * 初始化地图
    * 销毁实例，添加地图控制器，添加底图
-   * @param {string | HTMLElement} containerId - 容器 ID 或 HTMLElement
-   * @param {MapConfig} config - 地图配置项
-   * @returns {L.Map | null} Leaflet 地图实例
+   * @param containerId 容器 ID 或 HTMLElement
+   * @param config 配置项
    */
   public initMap(containerId: string | HTMLElement, config: MapConfig = {}): L.Map | null {
     // 如果已有实例，先销毁，确保路由切换时能重新挂载到新 DOM
@@ -145,11 +137,8 @@ export default class MapManager {
 
   /**
    * 向控制器添加底图
-   * @param {L.Layer} layer - 要添加的图层
-   * @param {string} name - 图层名称
-   * @param {boolean} show - 是否立即显示
    */
-  public addBaseLayer(layer: L.Layer, name: string, show: boolean = false): void {
+  public addBaseLayer(layer: L.Layer, name: string,show:boolean = false): void {
     if (this.layerControl) {
       this.layerControl.addBaseLayer(layer, name);
     }
@@ -160,11 +149,8 @@ export default class MapManager {
 
   /**
    * 向控制器添加叠加层
-   * @param {L.Layer} layer - 要添加的图层
-   * @param {string} name - 图层名称
-   * @param {boolean} show - 是否立即显示
    */
-  public addOverlay(layer: L.Layer, name: string, show: boolean = false): void {
+  public addOverlay(layer: L.Layer, name: string,show:boolean = false): void {
     if (this.layerControl) {
       this.layerControl.addOverlay(layer, name);
     }
@@ -176,7 +162,6 @@ export default class MapManager {
   /**
    * 响应式获取选中区域列表
    * 看起来像方法，其实是执行后的方法，直接就返回选中区域的列表
-   * @returns {any[]} 选中区域的数据列表
    */
   public get selectedRegionList() {
     return computed(() => Array.from(this.selectedRegions.value.values()).map(item => item.info));
@@ -185,10 +170,9 @@ export default class MapManager {
   /**
    * 处理区域选择
    * 在这里更新了响应式状态 selectedRegions，以region开头便于管理
-   * @param {any} regionData - 区域数据，可能是 GeoDataItem 或其他包含地理信息的对象
-   * @param {boolean} multiple - 是否支持多选，默认为 false
-   * @param {any} style - 自定义样式对象
-   * @returns {Promise<void>}
+   * @param regionData 区域数据
+   * @param multiple 是否支持多选
+   * @param style 自定义样式
    */
   public async handleRegionSelected(regionData: any, multiple: boolean = false, style?: any): Promise<void> {
     if (!this.map.value) {
@@ -204,8 +188,7 @@ export default class MapManager {
 
       // 1. 尝试直接从 regionData 中获取完整的地理数据项
       // 如果 regionData 本身就是 GeoDataItem (包含 path 属性)，或者包含完整的 data 属性
-      // 这里使用类型断言 as any 是因为 regionData 结构不确定，我们需要检查 path 属性
-      let geoDataItem: GeoDataItem | null = regionData.path ? (regionData as GeoDataItem) : (regionData.data && regionData.data.path ? regionData.data : null);
+      let geoDataItem = regionData.path ? regionData : (regionData.data && regionData.data.path ? regionData.data : null);
       let regionName = regionData.name || regionData.province;
 
       // 2. 如果没有直接获取到数据项，则根据名称查找
@@ -221,7 +204,7 @@ export default class MapManager {
           const regionLayer = L.geoJSON(geoJSONData as GeoJSON.GeoJsonObject, {
             style: (feature) => {
               // 优先使用具体 Feature 的名称，如果没有则回退到图层名
-              const name = feature?.properties?.name || (geoDataItem as GeoDataItem).name;
+              const name = feature?.properties?.name || geoDataItem.name;
               const data = this.tableManager.dataState.value.get(name);
               const val = data ? data[this.timeConfig.value.yearIndex] : null;
               
@@ -234,13 +217,11 @@ export default class MapManager {
               };
             },
             onEachFeature: (feature, layer) => {
-              // 这里断言 geoDataItem 不为空，因为外层已经判断过
-              const name = feature?.properties?.name || (geoDataItem as GeoDataItem).name;
+              const name = feature?.properties?.name || geoDataItem.name;
               // 绑定弹窗
               layer.bindPopup(`<b>${name}</b>`);
 
               // 鼠标悬停效果
-              // 使用 L.Path 类型断言，因为 GeoJSON 的 layer 通常是 Path (Polygon/Polyline)
               layer.on('mouseover', function (this: L.Path) {
                 this.setStyle({
                   weight: 3,
@@ -253,12 +234,10 @@ export default class MapManager {
               layer.on('mouseout', (e: L.LeafletMouseEvent) => {
                 // 修复：不要使用 resetStyle，因为它会回退到图层创建时的初始样式（通常是无数据状态）
                 // 而是重新计算并设置当前时间节点的正确样式
-                // 使用 as any 访问 feature 属性，这是 Leaflet 事件目标的常见模式
-                const featureName = (e.target as any).feature?.properties?.name || (geoDataItem as GeoDataItem).name;
+                const featureName = (e.target as any).feature?.properties?.name || geoDataItem.name;
                 const data = this.tableManager.dataState.value.get(featureName);
                 const val = data ? data[this.timeConfig.value.yearIndex] : null;
                 
-                // 断言为 L.Path 以访问 setStyle
                 (e.target as L.Path).setStyle({
                   fillColor: val !== null ? this.getIndexColor(val) : '#ccc',
                   fillOpacity: this.mapConfig.value.opacity,
@@ -269,7 +248,6 @@ export default class MapManager {
 
               // 双击缩放到区域并选中
               layer.on('dblclick', (e: L.LeafletMouseEvent) => {
-                // 断言为 FeatureGroup 以访问 getBounds
                 this.map.value?.fitBounds((e.target as L.FeatureGroup).getBounds());
                 this.selectedDistrict.value = name;
               });
@@ -311,10 +289,6 @@ export default class MapManager {
     }
   }
 
-  /**
-   * 加载中国省份 GeoJSON 图层
-   * @returns {Promise<void>}
-   */
   public async addChinaProvsGeojsonLayer(): Promise<void> {
     try {
       const data = await getGeojson(pathmap.all_prov_path);
@@ -327,7 +301,7 @@ export default class MapManager {
         }
       });
       if (this.layerControl) {
-        this.addOverlay(chinaProvinceLayer, '中国省界', true);
+        this.addOverlay(chinaProvinceLayer, '中国省界',true);
         this.selectedRegions.value.set('chinaProvince', {
           info: { id: 'chinaProvince', name: '中国省界' },
           layer: chinaProvinceLayer
@@ -340,7 +314,7 @@ export default class MapManager {
 
   /**
    * 清除特定区域或所有区域
-   * @param {string | number} id - 区域 ID
+   * 
    */
   public removeRegion(id: string | number): void {
     const key = `region_${id}`;
@@ -358,9 +332,6 @@ export default class MapManager {
     }
   }
 
-  /**
-   * 清除所有选中区域
-   */
   public clearSelectedRegions(): void {
     if (this.map.value) {
       this.selectedRegions.value.forEach(item => {
@@ -389,8 +360,6 @@ export default class MapManager {
 
   /**
    * 根据数值计算颜色 (插值 + Gamma 校正)
-   * @param {number} value - 输入数值
-   * @returns {string} RGB 颜色字符串
    */
   public getIndexColor(value: number): string {
     const { startRGB, endRGB, minValue, maxValue, gamma } = this.mapConfig.value;
@@ -440,7 +409,6 @@ export default class MapManager {
           // 2. 更新标注 (Label)
           if (this.mapConfig.value.showLabel && val !== null) {
             if (!item.labels) {
-              // 这里的 ! 断言 map.value 不为空，因为前面已经检查过
               item.labels = L.layerGroup().addTo(this.map.value!);
             }
             // 注意：每个 Feature 可能都需要一个独立的 Label
@@ -454,18 +422,12 @@ export default class MapManager {
 
   /**
    * 为特定 Feature 更新或添加 Label
-   * @param {L.LayerGroup} labelGroup - 标注图层组
-   * @param {any} layer - 目标图层 (Feature)
-   * @param {string} name - 区域名称
-   * @param {number} value - 显示数值
    */
   private updateFeatureLabel(labelGroup: L.LayerGroup, layer: any, name: string, value: number): void {
     let center: L.LatLng | null = null;
-    // 检查 layer 是否有 getBounds 方法 (Polygon/Polyline)
     if (layer.getBounds) {
       center = layer.getBounds().getCenter();
     } else if (layer.getLatLng) {
-      // 检查 layer 是否有 getLatLng 方法 (Marker)
       center = layer.getLatLng();
     }
 
@@ -498,8 +460,6 @@ export default class MapManager {
 
   /**
    * 自动加载数据中缺失的图层
-   * @param {string[]} regionNames - 区域名称列表
-   * @returns {Promise<void>}
    */
   public async autoLoadMissingLayers(regionNames: string[]): Promise<void> {
     for (const name of regionNames) {
