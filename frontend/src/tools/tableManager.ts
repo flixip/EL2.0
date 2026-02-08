@@ -1,4 +1,4 @@
-import { ref, watch } from 'vue';
+import { ref } from 'vue';
 import { ndviData } from '@/data/sampleData';
 
 /**
@@ -32,12 +32,10 @@ export default class TableManager {
   // 时间配置范围（由 CSV 数据决定）
   public yearRange = ref(0);
 
-  private constructor() {
-    // 监听列表变化，自动更新聚合数据状态
-    watch(this.importedCSVList, () => {
-      this.aggregateData();
-    }, { deep: true });
-  }
+  // 起始年份（由 CSV 数据决定，默认 2000）
+  public startYear = ref(2000);
+
+  private constructor() {}
 
   public static getInstance(): TableManager {
     if (!TableManager.instance) {
@@ -53,7 +51,7 @@ export default class TableManager {
     const lines = text.split('\n').filter(l => l.trim());
     if (lines.length === 0) return { headers: [], rows: [] };
     
-    const headers = lines[0].split(',').map(h => h.trim());
+    const headers = lines[0]?.split(',').map(h => h.trim()) || [];
     const rows = lines.slice(1).map(line => line.split(',').map(v => v.trim()));
     
     return { headers, rows };
@@ -86,13 +84,18 @@ export default class TableManager {
     if (index !== -1) {
       const { headers, rows } = this.parseCSV(newText);
       const item = this.importedCSVList.value[index];
-      
+
       this.importedCSVList.value[index] = {
-        ...item,
+        id: String(item?.id || ''),
+        name: String(item?.name || ''),
         rawText: newText,
         headers,
-        rows
+        rows,
+        mapping: { ...(item?.mapping || { nameField: '', valueFields: [] }) }
       };
+      
+      // 更新数据后重新聚合
+      this.aggregateData();
     }
   }
 
@@ -101,6 +104,8 @@ export default class TableManager {
    */
   public removeCSV(id: string): void {
     this.importedCSVList.value = this.importedCSVList.value.filter(item => item.id !== id);
+    // 删除数据后重新聚合
+    this.aggregateData();
   }
 
   /**
@@ -120,7 +125,8 @@ export default class TableManager {
   private aggregateData(): void {
     const newData = new Map<string, number[]>();
     let maxRange = 0;
-
+    let minYear = Infinity; // 用于追踪最小起始年份
+    let startYear = 1900; // 默认起始年份
     this.importedCSVList.value.forEach(item => {
       const { nameField, valueFields } = item.mapping;
       if (!nameField || valueFields.length === 0) return;
@@ -130,7 +136,10 @@ export default class TableManager {
 
       item.rows.forEach(row => {
         const name = row[nameIdx];
-        const vals = valIdxs.map(idx => parseFloat(row[idx]) || 0);
+        const vals = valIdxs.map(idx => {
+          const val = row[idx];
+          return val !== undefined ? parseFloat(val) || 0 : 0;
+        });
         
         if (name) {
           newData.set(name, vals);
@@ -138,10 +147,30 @@ export default class TableManager {
       });
 
       maxRange = Math.max(maxRange, valueFields.length);
+
+      // 尝试从第一个数值字段检测年份
+      // 假设 valueFields 是按顺序排列的，取第一个字段尝试解析为年份
+      if (valueFields.length > 0) {
+        const firstField = valueFields[0];
+        // 尝试解析为整数年份
+        const potentialYear = parseInt(firstField || '');
+        // 简单验证：必须是 4 位数字，且在合理范围内 (1900-2100)
+        if (!isNaN(potentialYear) && potentialYear >= 1900 && potentialYear <= 2100) {
+          minYear = Math.min(minYear, potentialYear);
+        }
+      }
     });
 
     this.dataState.value = newData;
     this.yearRange.value = maxRange;
+    
+    // 如果找到了有效的最小年份，则更新 startYear
+    if (minYear !== Infinity) {
+      //  假设所有数据都从相同年份开始，更新 startYear
+      startYear = minYear;
+      //  属性“startYear”后续添加，
+      (this as any).startYear = ref(minYear);
+    }
   }
 
   /**

@@ -201,7 +201,8 @@ export default class MapManager {
         const geoJSONData = await geoDataService.loadGeoJSONData(geoDataItem);
         
         if (geoJSONData && geoJSONData.features.length > 0) {
-          const regionLayer = L.geoJSON(geoJSONData as GeoJSON.GeoJsonObject, {
+          // 这里as any
+          const regionLayer = L.geoJSON(geoJSONData as any, {
             style: (feature) => {
               // 优先使用具体 Feature 的名称，如果没有则回退到图层名
               const name = feature?.properties?.name || geoDataItem.name;
@@ -212,7 +213,7 @@ export default class MapManager {
                 color: '#333',
                 weight: 1,
                 opacity: 0.8,
-                fillColor: val !== null ? this.getIndexColor(val) : '#ff4d4f',
+                fillColor: (val !== null && val !== undefined) ? this.getIndexColor(val) : '#ff4d4f',
                 fillOpacity: this.mapConfig.value.opacity
               };
             },
@@ -239,7 +240,7 @@ export default class MapManager {
                 const val = data ? data[this.timeConfig.value.yearIndex] : null;
                 
                 (e.target as L.Path).setStyle({
-                  fillColor: val !== null ? this.getIndexColor(val) : '#ccc',
+                  fillColor: (val !== null && val !== undefined) ? this.getIndexColor(val) : '#ccc',
                   fillOpacity: this.mapConfig.value.opacity,
                   weight: 2,
                   color: '#333'
@@ -253,7 +254,8 @@ export default class MapManager {
               });
 
               // 单击选中
-              layer.on('click', (e: L.LeafletMouseEvent) => {
+              //未调用其值可以直接加_,或者对象解构，或者禁用未使用的警告。
+              layer.on('click', (_e: L.LeafletMouseEvent) => {
                 this.selectedDistrict.value = name;
               });
             }
@@ -323,7 +325,7 @@ export default class MapManager {
       this.map.value.removeLayer(item.layer as Layer);
       this.layerControl?.removeLayer(item.layer as Layer);
       if (item.labels) {
-        this.map.value.removeLayer(item.labels);
+        this.map.value.removeLayer(item.labels as unknown as L.Layer);
       }
       this.selectedRegions.value.delete(key);
       if (this.selectedDistrict.value === item.info.name) {
@@ -338,7 +340,7 @@ export default class MapManager {
         this.map.value?.removeLayer(item.layer as Layer);
         this.layerControl?.removeLayer(item.layer as Layer);
         if (item.labels) {
-          this.map.value?.removeLayer(item.labels);
+          this.map.value?.removeLayer(item.labels as unknown as L.Layer);
         }
       });
     }
@@ -385,7 +387,7 @@ export default class MapManager {
   public updateLayerStyles(): void {
     if (!this.map.value) return;
 
-    this.selectedRegions.value.forEach((item, key) => {
+    this.selectedRegions.value.forEach((item, _key) => {
       // 修复：在为该区域组重新添加标注前，先清空旧标注，防止叠加
       if (item.labels) {
         item.labels.clearLayers();
@@ -400,7 +402,7 @@ export default class MapManager {
           const val = data ? data[this.timeConfig.value.yearIndex] : null;
 
           layer.setStyle({
-            fillColor: val !== null ? this.getIndexColor(val) : '#ccc',
+            fillColor: (val !== null && val !== undefined) ? this.getIndexColor(val) : '#ccc',
             fillOpacity: this.mapConfig.value.opacity,
             weight: 2,
             color: '#333'
@@ -413,7 +415,15 @@ export default class MapManager {
             }
             // 注意：每个 Feature 可能都需要一个独立的 Label
             // 这里简单处理：如果图层有多个 Feature，我们尝试在每个 Feature 中心点加 Label
-            this.updateFeatureLabel(item.labels, layer, featureName, val);
+            this.updateFeatureLabel(item.labels as L.LayerGroup, layer, featureName, val!);
+            // 这里的val! 断言是因为我们已经检查过 val 是否为 number，而非undefined 或 null所以可以直接加！
+            // 更好的修改方案是先判空，再调用并提供默认值
+              // if (val !== undefined) {
+                //   this.updateFeatureLabel(item.labels, layer, featureName, val);
+              // } else {
+             //   // 或用默认值调用
+                 //   this.updateFeatureLabel(item.labels, layer, featureName, 0);
+                    // }
           }
         });
       }
