@@ -1,5 +1,5 @@
 <template>
-  <div class="px-[20px] pb-[20px] overflow-y-auto hide-scrollbar max-h-screen">
+  <div class="px-5 pb-5 overflow-y-auto hide-scrollbar max-h-screen">
     <div class="flex justify-between items-center ">
     <h1 
     class="text-2xl mb-2 font-bold select-none">🌏影像数据采集与可视化</h1>

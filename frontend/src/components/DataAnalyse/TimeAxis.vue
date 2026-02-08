@@ -54,7 +54,7 @@
         </div>
 
         <!-- 当前显示 -->
-        <div class="flex flex-col items-end min-w-[80px]">
+        <div class="flex flex-col items-end min-w-20">
           <span class="text-xl font-bold text-emerald-400">{{ currentYear }}</span>
           <span class="text-[10px] text-white/40">年份索引: {{ timeConfig.yearIndex }}</span>
         </div>

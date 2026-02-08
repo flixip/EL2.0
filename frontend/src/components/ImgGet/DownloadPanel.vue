@@ -115,7 +115,7 @@
 </template>
 
 <script setup>
-import { ref, reactive, defineEmits } from 'vue';
+import { ref, reactive } from 'vue';
 import { ArrowLeft } from '@element-plus/icons-vue';
 
 const emit = defineEmits(['back']);

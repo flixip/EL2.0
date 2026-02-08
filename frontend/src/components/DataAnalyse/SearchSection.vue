@@ -126,7 +126,7 @@ const handleAddGeoData = async (data) => {
 }
 
 .search-results {
-  @apply mt-2 max-h-[200px]; /* Layout */
+  @apply mt-2 max-h-50; /* Layout */
   @apply border border-gray-200 rounded overflow-hidden; /* Aesthetics */
 }
 
