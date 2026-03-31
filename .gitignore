@@ -52,3 +52,6 @@ Thumbs.db
 /backend/.env
 /backend/logs/
 Aichat/.env
+
+Aichat/__pycache__/*.pyc
+/__pycache__/*.pyc
