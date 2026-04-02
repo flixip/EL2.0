@@ -4,11 +4,11 @@ sys.path.append('E:/github/EL2.0')
 from dotenv import load_dotenv
 from langchain_community.chat_models.tongyi import ChatTongyi
 from langchain.agents import create_agent
-from langchain_core.messages import HumanMessage
+from langchain_core.messages import HumanMessage, AIMessage,ToolMessage
 from langchain.tools import tool
 from pydantic import BaseModel, Field
-from tools import geedataset_tools,super_tools,geefunc_tools
-from utils import Supervisor
+from Aichat.tools import geedataset_tools,super_tools,geefunc_tools
+from Aichat.utils import Supervisor
 
 
 load_dotenv()
@@ -42,14 +42,32 @@ class Agent:
             self.record = []
             
       def query(self, question:str):
+            # 每次query都重置重试次数
+            self.supervisor.reset_retry_count()
+            # 重置记录结果，避免重复记录
+            self.clear_record()
             resp = self.agent.invoke({"messages": [HumanMessage(content=question)]})
             self.record.append(resp)
             # 直接返回最后一条信息而不是完整响应
+            self.count_tokens()
             return resp['messages'][-1].content
       
       def get_record(self):
             return self.record
+      
+      def clear_record(self):
+            self.record = []
 
+      def count_tokens(self):
+            token_count = 0
+            for answer in self.record:
+                  msgs = answer['messages']
+                  for msg in msgs:
+                        if isinstance(msg,AIMessage) or isinstance(msg,ToolMessage):
+                              token_count += int(msg.response_metadata['token_usage']['total_tokens'])
+            print(f'{self.name} 总token消耗: {token_count}')
+            return token_count
+      
       def as_tool(self,description:str,**kwargs):
             def wrapper(question:str):
                   return self.query(question)
@@ -66,9 +84,15 @@ class Agent:
       
 agent001 = Agent(
       name = "agent001",
-      system_prompt="""你是一个专业的数据集搜索助手，根据问题进行相应检索操作，优先用自身知识回答
+      system_prompt="""
+      你是一个专业的数据集搜索助手，根据问题进行相应检索操作。
       严格遵守以下规则：
-      禁止并行调用工具，禁止硬编码数据集ID。
+      禁止并行调用工具，禁止硬编码数据集ID，严禁编造数据集ID。
+      如果要查询多个数据集的数据集id 比如查询Sentinel-2和landsat数据集的id，先查询Sentinel-2数据集的id并记录，再查询landsat数据集的id。
+      工具使用：
+      一般要先用filter_dataset工具根据筛选条件搜索GEE数据集,该工具返回符合条件的数据集ID列表。
+      然后根据筛选来的数据集ID列表，用get_detail工具根据数据集ID和需要查询的字段查询需要了解的详情.
+      get_origin_* 工具是获取摘要后的工具函数返回值的原始值，记住一开始调用工具后返回的返回值类型信息，然后根据工具提示的使用场景合理选择调用的工具函数
       """,
       tools = geedataset_tools
       )
@@ -117,10 +141,15 @@ agent003 = Agent(
       4. 禁止对确定性错误进行重试；
       5. 禁止跳步执行、跳过结果校验；
       6. 禁止硬编码任何数据集ID、波段名称、区域、时间范围。
+      
+      ### 关于地图URL的处理规则
+      1. 当你需要展示影像地图时，请确保获取到的地图URL（mapurl）保持原样，不要修改或截断；
+      2. 地图URL通常格式为：https://earthengine.googleapis.com/v1/projects/.../tiles/{z}/{x}/{y}
+      3. 请将所有地图URL完整地包含在回复中，这样前端才能正确识别并添加到地图上；
+      4. 你可以在地图URL前后添加一些说明文字，但不要改变URL本身的格式。
       """,
       tools = [agent001_tool,
                agent002_tool]
       )
 
       
-print(agent003)

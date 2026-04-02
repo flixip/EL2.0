@@ -102,3 +102,34 @@ def filter_images(cid):
             'status': 'error',
             'message': str(e)
         })
+
+from geeservice.utils import fliter_img_id,get_filtered_info
+
+@bp.route('/geefunc/filter', methods=['POST'])
+def get_img_ids():
+    '''
+    获取数据集筛选结果
+    参数:    
+        cid: 数据集ID
+        filter_params: 筛选参数
+            start_date: 开始日期 (YYYY-MM-DD)
+            end_date: 结束日期 (YYYY-MM-DD)
+            bounds: 地理边界（字符串数组，如 ["湖北省", "武汉市"]）
+            cloud: 云量阈值 (0-100)
+            **kwargs: 其他筛选参数，后续考虑增加功能
+    '''
+    args = request.json
+    cid = args.get('cid')
+    filter_params = args.get('filter_params')
+    ids = fliter_img_id(cid,**filter_params)
+    info = get_filtered_info(cid,info_type='gethtml')
+    
+    return jsonify({
+        'status': 'success',
+        'ids': ids,
+        'info':{
+            'type':"html",
+            'content':info
+        },
+        
+    })

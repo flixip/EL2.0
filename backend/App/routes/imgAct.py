@@ -59,3 +59,32 @@ def get_image_map_url(img_id):
             'status': 'error',
             'message': str(e)
         })
+
+from geeservice.utils import get_map_urls
+
+@bp.route('/geefunc/mapurl', methods=['POST'])    
+def get_map_url():
+    '''
+    获取数据集地图URL
+    参数:    
+        cid: 数据集ID
+        body: 可视化参数
+            bands: 波段组合（字符串数组）
+            min: 最小值（数值或数值数组）
+            max: 最大值（数值或数值数组）
+            gamma: 伽马校正（数值或数值数组，可选）
+    '''
+    args = request.json
+    cids = args.get('cid', [])
+    vis_params = args.get('vis_params', {})
+    try:
+        result = get_map_urls(cids, vis_params)
+        return jsonify({
+            'status': 'success',
+            'map_url': result,
+        })
+    except Exception as e:
+        return jsonify({
+            'status': 'error',
+            'message': str(e)
+        })

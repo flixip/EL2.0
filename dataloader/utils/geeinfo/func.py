@@ -58,14 +58,13 @@ def get_detail(cids:str | list[str],field:list[str] | None = None,orient:str = '
     error_fields = [f for f in field if f not in valid_field]
     result_dict = result_df.to_dict(orient=orient)
     if isinstance(result_dict, list):
-        result_dict.insert(0, {'error_fields': error_fields})
+        result_dict.append({'error_fields': error_fields})
     if isinstance(result_dict, dict):
         result_dict['error_fields'] = error_fields
     return result_dict
 
+def get_band_info(cid:str) -> list[str]:
+    return parser.get_bands_by_cid(cid)['Name'].tolist()
 
 if __name__ == '__main__':
-    
-
-    print(get_detail(["COPERNICUS/S2_SR_HARMONIZED", "COPERNICUS/S2_HARMONIZED", "LANDSAT/LC08/C02/T1_L2", "LANDSAT/LC08/C02/T2_L2"],field=['name','start_date','end_date','pixel_size','错误字段']))
-    
+   print(get_band_info('COPERNICUS/S2_SR_HARMONIZED'))

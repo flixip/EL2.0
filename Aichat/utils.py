@@ -68,8 +68,12 @@ class Summary:
 
             if isinstance(original_data, str) and len(original_data) > str_limit:
                 return f"【{func.__name__}】返回字符串类型 <已摘要为前{str_limit}个字符>：{original_data[:str_limit]}...原数据长度：{len(original_data)}（通过get_origin_* 等方法获取完整信息）"
-            elif isinstance(original_data, list) and len(original_data) > list_limit:
-                return f"【{func.__name__}】返回列表类型 <已摘要为前{list_limit}个元素>：{original_data[:list_limit]}...原数据长度：{len(original_data)}（通过get_origin_* 等方法获取完整信息）"
+            elif isinstance(original_data, list):
+                # 列表类型把列表元素也摘要一下，不然元素太长token也爆炸
+                summary_data = []
+                for item in original_data[:list_limit]:
+                    summary_data.append(str(item)[:str_limit] + "...")
+                return f"【{func.__name__}】返回列表类型 <已摘要为前{list_limit}个元素>：{summary_data}...原数据长度：{len(original_data)}（通过get_origin_* 等方法获取完整信息）"
             elif isinstance(original_data, dict):
                 summary_dict = {}
                 has_truncated = False
@@ -113,9 +117,15 @@ class Summary:
 
     def get_origin_by_key(self, func_name: str, *keys: str) -> any:
         origin = self.get_origin_raw(func_name)
-        if not isinstance(origin, dict):
-            return f"【类型错误】{func_name} 非字典类型"
+        # or 是如果前者false，就后者，如果前者true,就前者,如果不是字典就检查是不是list 
+        if not isinstance(origin, dict) or isinstance(origin, list) and isinstance(origin[0], dict):
+            return f"【类型错误】{func_name} 非字典或list<dict>类型"
+        
         try:
+            if isinstance(origin, list):
+                for item in origin:
+                    result = item[keys[0]] if len(keys) == 1 else {k: item[k] for k in keys}
+                return result
             return origin[keys[0]] if len(keys) == 1 else {k: origin[k] for k in keys}
         except KeyError as e:
             return f"【键错误】{e}，字典键：{list(origin.keys())}"
@@ -160,7 +170,7 @@ class Supervisor:
             },
             "get_origin_by_key": {
                 "args_schema": GetOriginByKeyArgs,
-                "description": "【get_origin_by_key 工具提示】按字典键（支持单个/多个键）获取被摘要的函数的原始数据，支持字典类型返回值，当需要按取指定键值对时调用此工具。"
+                "description": "【get_origin_by_key 工具提示】按字典键（支持单个/多个键）获取被摘要的函数的原始数据，支持字典或list<dict>类型返回值，当需要按取指定键值对时调用此工具。"
             }
         }
 

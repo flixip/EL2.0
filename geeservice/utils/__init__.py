@@ -4,6 +4,7 @@ from .func import *
 
 export = [
     'fliter_img_id',
+    'get_filtered_info'
     'ParamsFilterImgId',
     'get_map_urls',
     'VisParams',

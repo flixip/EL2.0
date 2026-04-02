@@ -3,6 +3,7 @@ import geemap
 import json
 from pathlib import Path
 import eemont
+from typing import Dict
 
 PROJECT_PATH = Path(__file__).parent.parent.parent
 SRC_PATH = PROJECT_PATH / 'dataloader' / 'admini_division_src'
@@ -14,7 +15,7 @@ PROJECT_ID = "my-project-70786-459711"
 def admin():
     ee.Authenticate()
     ee.Initialize(project=PROJECT_ID)
-    print("Administered successfully.")
+    print(f"\033[36m == \"{PROJECT_ID}\" Administered successfully. == \033[0m")
 
 class import_FeatureCollection:
     def __init__(self, bounds:str | list[str,]):
@@ -26,6 +27,7 @@ class import_FeatureCollection:
         self.geojson = self.getGeojson(self._bounds_check(bounds))
         self.name = self.geojson.get('name',str(bounds).split('\\')[-1].split('.')[0])
         self.features = None
+    
     
     def _bounds_check(self,bounds:str | list[str,]) -> Path:
         "输入检查"
@@ -85,12 +87,23 @@ class import_FeatureCollection:
         return self
 
 class import_ImageCollection:
+    # 制作单例组模式，便于复用
+    _instances: Dict[str,'import_ImageCollection'] = {}
+    
     def __init__(self, dataset_id: str):
         self.dataset_id = dataset_id
         self.collection = ee.ImageCollection(dataset_id)
         self.ids = []
         self.selected_ids = []
         self.bounds_filtered = False
+    
+    @classmethod
+    def get_instance(cls, cid):
+        if cid not in cls._instances:
+            cls._instances[cid] = import_ImageCollection(cid)
+        return cls._instances[cid]
+        
+        
 
     def filter_Date(self, t0: str, t1: str) -> 'import_ImageCollection':
         '''

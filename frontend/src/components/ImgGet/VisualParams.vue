@@ -144,11 +144,12 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref, reactive, onMounted, computed } from 'vue';
 import { ArrowLeft, VideoPlay } from '@element-plus/icons-vue';
-import { getMapUrlsFromStorage, getImageMapUrl } from '@/tools/apiService';
-import { getFilterResult, getVisualParams, saveVisualParams } from '@/tools/storageManager';
+import { getMapUrl } from '@/apiService/geefuncApi';
+import { getFilterResult, getVisualParams, saveVisualParams, getSelectedDataset } from '@/tools/storageManager';
+import { getBandNames } from '@/apiService/geoinfoApi';
 import MapManager from '@/tools/mapManager';
 
 const mapManager = MapManager.getInstance();
@@ -156,9 +157,11 @@ const mapManager = MapManager.getInstance();
 const emit = defineEmits(['prev-step']);
 const activeTab = ref('basic');
 const filterResult = ref(null);
+const selectedDataset = ref(null);
+const bandnames = ref<string[]>([]);
+const loading = ref(false);
 
 // 基础设置表单
-const basicFormRef = ref(null);
 const basicForm = reactive({
   bands: [],
   min: 0,
@@ -167,7 +170,6 @@ const basicForm = reactive({
 });
 
 // 高级设置表单
-const advancedFormRef = ref(null);
 const advancedForm = reactive({
   gamma: 1.0,
   opacity: 1,
@@ -179,8 +181,17 @@ const advancedForm = reactive({
 
 // 计算属性：获取波段列表
 const bandOptions = computed(() => {
-  // 新的API暂时不返回详细的波段信息，这里使用空数组作为占位
-  return [];
+  if (!bandnames.value || bandnames.value.length === 0) {
+    return [];
+  }
+  
+  return bandnames.value.map((band: string) => {
+    const bandName = band;
+    return {
+      value: bandName,
+      label: bandName
+    };
+  });
 });
 
 // 计算属性：获取影像列表
@@ -240,66 +251,45 @@ const handlePrev = () => {
 };
 
 // 提交函数
-const handleSubmit = () => {
-  if (basicFormRef.value) {
-    basicFormRef.value.validate((valid) => {
-      if (valid) {
-        // 保存表单数据
-        const visualParams = {
-          basic: basicForm,
-          advanced: advancedForm
-        };
-        saveVisualParams(visualParams);
-        console.log('可视化参数提交:', visualParams);
-        
-        // 新的API调用逻辑（待完善，因为新API是针对单个影像的）
-        console.log('使用新的API方法获取地图URL');
-        
-        // 老方法（已注释）
-        // 调用API获取地图URL
-        // getMapUrlsFromStorage().then((response) => {
-        //   console.log('获取地图URL成功:', response);
-        //   
-        //   // 清理之前的影像图层
-        //   mapManager.clearImageLayers();
-        //   
-        //   // 从本地存储中获取选中的影像ID
-        //   const visParams = getVisualParams();
-        //   const { selectedImages } = visParams.basic;
-        //   
-        //   // 获取地图URL列表
-        //   const mapUrls = response.result;
-        //   
-        //   // 遍历地图URL列表，添加到地图上
-        //   if (Array.isArray(mapUrls) && mapUrls.length > 0) {
-        //     mapUrls.forEach((mapUrl, index) => {
-        //       if (mapUrl && selectedImages[index]) {
-        //         // 从影像ID中截取最后一个斜杠的后半部分作为图层名称
-        //         const imageId = selectedImages[index];
-        //         const layerName = imageId.split('/').pop() || imageId;
-        //         
-        //         // 创建Leaflet图层
-        //         const layer = L.tileLayer(mapUrl, {
-        //           attribution: 'Google Earth Engine'
-        //         });
-        //         
-        //         // 添加图层到地图
-        //         mapManager.addImageLayer(layer, layerName, true);
-        //       }
-        //     });
-        //   }
-        // }).catch((error) => {
-        //   console.error('获取地图URL失败:', error);
-        // });
-      }
-    });
-  }
+const handleSubmit = async () => {
+ const ids = basicForm.selectedImages
+ const vis_params = {
+  bands: basicForm.bands,
+  min: basicForm.min,
+  max: basicForm.max,
+ }
+ const mapUrlresp = await getMapUrl(ids, vis_params);
+ const mapUrl = mapUrlresp.map_url || [];
+ console.log(mapUrl);
+mapManager.clearImageLayers();
+ mapUrl.forEach((url: string) => {
+    mapManager.addImageLayer(url);
+ })
 };
 
 // 生命周期钩子
-onMounted(() => {
+onMounted(async () => {
   // 加载筛选结果
   filterResult.value = getFilterResult();
+  
+  // 加载选中的数据集
+  const savedDataset = getSelectedDataset();
+  if (savedDataset) {
+    selectedDataset.value = savedDataset;
+    // 获取数据集详情，包括波段信息
+    try {
+      loading.value = true;
+      const bandsNames = await getBandNames(savedDataset.cid);
+      if (bandsNames.status === 'success' && bandsNames.band_names) {
+        bandnames.value = bandsNames.band_names;
+        console.log('获取到波段信息:', bandsNames.band_names);
+      }
+    } catch (error) {
+      console.error('获取数据集详情失败:', error);
+    } finally {
+      loading.value = false;
+    }
+  }
   
   // 加载可视化参数
   const savedVisualParams = getVisualParams();
@@ -320,7 +310,7 @@ onMounted(() => {
     }
   }
   
-  // 新的API暂时不返回详细的波段信息，使用默认值
+  // 使用默认值
   if (!savedVisualParams || !savedVisualParams.basic) {
     basicForm.min = 0;
     basicForm.max = 10000;

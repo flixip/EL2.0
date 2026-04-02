@@ -77,13 +77,13 @@ export default {
     // 数据集搜索 API 路径
     API_DATASETS_SEARCH: 'api/geeinfo/search',
     // 数据集详情 API 路径
-    API_DATASETS_DETAIL: 'api/geeinfo/details/',
+    API_DATASETS_DETAIL: 'api/geeinfo/detail/bands/name/',
     // 数据集筛选 API 路径
     API_DATASETS_FILTER: 'api/datasets/',
     // 获取地图 URL API 路径
     API_GET_MAP_URL: 'api/get_map_url',
     // 影像集筛选 API 路径
-    API_IMG_ACT_FILTER: 'api/imgAct/',
+    API_IMG_ACT_FILTER: 'api/imgcAct/',
     // 影像地图 URL API 路径
     API_IMG_MAP_URL: 'api/imgAct/',
     // API 路径映射表
@@ -92,6 +92,9 @@ export default {
     },
     // 后端AIChat接口的接口
     API_AI_CHAT: 'api/aiChat',
+    // 后端GEEFUNC接口的接口
+    API_GEE_FUNC_MAP_URL: 'api/geefunc/mapurl',
+    API_GEE_FUNC_FILTER_URL: 'api/geefunc/filter',
 }
 
 

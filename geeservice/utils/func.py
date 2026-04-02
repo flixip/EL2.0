@@ -10,13 +10,28 @@ class ParamsFilterImgId(BaseModel):
     end_date: str = Field(description="结束日期yyyy-MM-dd", example="2009-12-31")
 
 
-def fliter_img_id(cid:str,bounds:list[str,],start_date:str,end_date:str)->list[str]:
+def fliter_img_id(cid:str,bounds:list[str,],start_date:str,end_date:str,**kwargs)->list[str]:
     exec_code(f'from geeservice.geeFunc.baseTool import import_FeatureCollection as FC,import_ImageCollection as IC')        
-    resp = eval_code(f'IC("{cid}").filter_Bounds(FC({str(bounds)})).filter_Date("{start_date}","{end_date}").get_ids()')
+    resp = eval_code(f'IC.get_instance("{cid}").filter_Bounds(FC({str(bounds)})).filter_Date("{start_date}","{end_date}").get_ids()')
     if resp['code'] == 200:
         return resp['result']
     else:
         raise Exception(f'筛选图像id失败：{resp["msg"]}')
+
+def get_filtered_info(cid,info_type:list[str,str] = ['getinfo','gethtml']):
+    # 需要优先筛选，为filter_img_id后的方法
+    exec_code(f'from geeservice.geeFunc.baseTool import import_FeatureCollection as FC,import_ImageCollection as IC')        
+    if 'getinfo' in info_type and 'gethtml' not in info_type:
+        resp = eval_code(f'IC.get_instance("{cid}").get_info()')
+    elif 'gethtml' in info_type and 'getinfo' not in info_type:
+        resp = eval_code(f'IC.get_instance("{cid}")._repr_html_()')
+    elif 'getinfo' in info_type and 'gethtml' in info_type:
+        resp = eval_code(f'IC.get_instance("{cid}").get_info(),IC.get_instance("{cid}")._repr_html_()')
+
+    if resp['code'] == 200:
+        return resp['result']
+    else:
+        raise Exception(f'获取筛选结果信息失败：{resp["msg"]}')
 
 
 class VisParams(BaseModel):

@@ -3,7 +3,7 @@ from langchain_core.tools import tool as create_tool  # 新版LangChain推荐导
 from dataloader.utils.geeinfo import \
     filter_dataset, get_dataset_fields, get_detail, \
     DatasetFilterParams
-from utils import Supervisor  # 【核心替换1】引入新的Supervisor类
+from Aichat.utils import Supervisor  # 【核心替换1】引入新的Supervisor类
 from typing import Optional
 
 # ==================== 第一步：初始化全局Supervisor（替代单独的Summary/protect） ====================
@@ -36,13 +36,13 @@ geedataset_tools = [
     create_tool(
         supervisor.supervise(filter_dataset),
         args_schema=DatasetFilterParams,
-        description="根据筛选条件搜索GEE数据集，优先用自身知识回答，不确定再调用"
+        description="根据筛选条件搜索GEE数据集,该工具返回符合条件的数据集ID列表"
     ),
     create_tool(
         supervisor.supervise(get_detail),
         args_schema=ParamsGetDetail,
         description="""
-        根据数据集ID和字段查询详情，优先用自身知识回答，不确定再调用
+        根据数据集ID和字段查询详情
         注意查询字段如果包含不存在的字段，会自动移除，请注意返回信息中的error_fields元素！
         """
     ),
@@ -73,3 +73,9 @@ geefunc_tools = [
     
 ]
 
+
+if __name__ == '__main__':
+    supervisor = Supervisor()
+    get_detail = supervisor.supervise(get_detail)
+    result = get_detail(cids=['LANDSAT/LT05/C02/T1_L2'],field=['name','producer','pixel_size_num','description'])
+    print(result)

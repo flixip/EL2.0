@@ -28,6 +28,11 @@ export interface BandInfo {
   [key: string]: any;
 }
 
+interface BandNameResponse {
+  status: string;
+  band_names: string[];
+}
+
 export interface AttributeInfo {
   [key: string]: any;
 }
@@ -52,14 +57,30 @@ export const searchDatasets = async (params: SearchDatasetsParams): Promise<Sear
   }
 };
 
-export const getDatasetDetail = async (datasetId: string): Promise<DatasetDetailResponse> => {
-  console.log('开始获取数据集详情:', datasetId);
+export const getBandNames = async (cid: string): Promise<BandNameResponse> => {
+  console.log('开始获取数据集详情:', cid);
   try {
-    const response = await axios.get(`${config.API_DATASETS_DETAIL}${datasetId}`);
-    console.log('数据集详情获取完成');
+    const response = await axios.get(`${config.API_DATASETS_DETAIL}${cid}`);
+    console.log('数据集详情获取完成',response.data);
     return response.data;
   } catch (error) {
     console.error('Failed to get dataset detail:', error);
     throw error;
   }
 };
+
+
+
+
+
+
+declare global {
+  interface Window {
+    apiService: typeof import('./geoinfoApi');
+  }
+}
+
+window.apiService = {
+  searchDatasets,
+  getBandNames,
+}

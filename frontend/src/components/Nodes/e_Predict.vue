@@ -2,7 +2,7 @@
   <el-upload
     v-model:file-list="fileList"
     class="upload-demo border p-3 rounded-xl border-dashed bg-gray-50 max-w-75"
-    action="api/upload"
+    action="api/predict"
     multiple
     :on-preview="handlePreview"
     :on-remove="handleRemove"

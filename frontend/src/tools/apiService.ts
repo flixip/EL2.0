@@ -1,7 +1,7 @@
 import axios from "axios";
 import config, { type FilterImagesParams, type FilterImagesResponse, type VisParams, type GetImageMapUrlResponse } from '@/config';
 import { getSelectedDataset, getStep2FormData, getVisualParams } from './storageManager';
-import { searchDatasets, getDatasetDetail } from '@A/geoinfoApi';
+import { searchDatasets, getBandNames } from '@A/geoinfoApi';
 
 export const filterImagesFromStorage = async () => {
   console.log('开始从本地存储获取数据并发送到后端进行筛选');
@@ -132,7 +132,7 @@ declare global {
 }
 
 window.searchDatasets = searchDatasets;
-window.getDatasetDetail = getDatasetDetail;
+window.getDatasetDetail = getBandNames;
 window.filterImages = filterImages;
 window.filterImagesFromStorage = filterImagesFromStorage;
 window.getMapUrls = getMapUrls;

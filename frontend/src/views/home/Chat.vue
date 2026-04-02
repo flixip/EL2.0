@@ -70,7 +70,7 @@
 <script setup lang="ts">
 import { ref, watch, nextTick, onMounted, onUnmounted } from 'vue'
 import { Promotion } from '@element-plus/icons-vue'
-import RagService from '@/services/RagService'
+import { aiChat } from '@/apiService/aichatApi'
 import { marked } from 'marked'
 import MapManager from "@/tools/mapManager"
 
@@ -104,6 +104,12 @@ const addAiMessage = (content: string) => {
     timestamp: getCurrentTime()
   }
   messages.value.push(aiMessage)
+}
+
+const extractMapUrls = (content: string): string[] => {
+  const mapUrlPattern = /https?:\/\/[^\s<>"{}]+\/tiles\/\{z\}\/\{x\}\/\{y\}/g
+  const matches = content.match(mapUrlPattern)
+  return matches || []
 }
 
 const addLayer = (mapurl: string | Array<string>,pos:[string,string | undefined] | undefined)=> {
@@ -153,10 +159,10 @@ const sendMessage = async () => {
   // 滚动到底部
   scrollToBottom()
   
-  // 调用RAG服务获取AI回复（流式）
+  // 调用aiChat服务获取AI回复
   isLoading.value = true
   
-  // 添加一个空的AI消息，用于实时更新
+  // 添加一个空的AI消息
   const aiMessageIndex = messages.value.length
   messages.value.push({
     content: '',
@@ -164,30 +170,20 @@ const sendMessage = async () => {
     timestamp: getCurrentTime()
   })
   
-  let context = ''
-  
   try {
-    await RagService.streamQuery(userMessage.content, (chunk, ctx) => {
-      // 保存上下文信息
-      if (ctx) {
-        context = ctx
-        console.log('RAG Context:', context)
-      }
-      
-      // 更新AI消息
-      if (chunk) {
-        const aiMessage = messages.value[aiMessageIndex]
-        if (aiMessage) {
-          aiMessage.content += chunk
-          scrollToBottom()
-        }
-      }
-    })
+    const response = await aiChat({ query: userMessage.content })
     
-    // 更新AI消息的时间戳
+    // 更新AI消息内容
     const aiMessage = messages.value[aiMessageIndex]
     if (aiMessage) {
+      aiMessage.content = response.answer
       aiMessage.timestamp = getCurrentTime()
+      
+      // 检测并提取mapurl
+      const mapUrls = extractMapUrls(response.answer)
+      if (mapUrls.length > 0) {
+        addLayer(mapUrls, undefined)
+      }
     }
   } catch (error) {
     // 更新错误消息
@@ -195,6 +191,7 @@ const sendMessage = async () => {
     if (aiMessage) {
       aiMessage.content = '抱歉，我暂时无法回答您的问题。请稍后再试。'
     }
+    console.error('AI chat error:', error)
   } finally {
     // 关闭加载状态
     isLoading.value = false

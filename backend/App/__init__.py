@@ -25,6 +25,8 @@ def create_app():
     from .routes.imgcAct import bp as imgcAct_bp
     app.register_blueprint(imgcAct_bp)
     
+    from .routes.aichat import bp as aichat_bp
+    app.register_blueprint(aichat_bp)
     
     
     return app
